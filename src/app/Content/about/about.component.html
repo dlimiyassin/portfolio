@@ -1,0 +1,85 @@
+<div>
+    <p class="hidden lg:block title-1">About <span class="text-color-blue">Me</span></p>
+
+    <div class="flex lg:hidden flex-row justify-between items-center">
+        <div>
+            <p class="font-spartan text-2xl">Yassine <span class="text-color-blue">Dlimi</span></p>
+        </div>
+        <div>
+            <button (click)="downloadPdf()" class="relative inline-flex h-10 active:scale-95 scale-75 transistion overflow-hidden rounded-lg p-[2px] focus:outline-none mb-2 animate-shaking" >
+                <span
+                  class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#bd5fff_0%,#f472b6_50%,#40A2D8_60%)]"
+                ></span>
+                <span
+                  class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-slate-950 px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined"
+                >
+                  CV
+                </span>
+              </button>
+        </div>
+    </div>
+
+    <p class="block lg:hidden text-gray-300 font-Montserrat text-[10px]">Full Stack Java Developer</p>
+
+    <div class="flex lg:flex-row flex-col lg:justify-between mt-3 lg:mt-0">
+        <div class="lg:w-[55%] font-Montserrat order-2 lg:order-1">
+            <p>
+                Welcome to my portfolio! I'm Yassine Dlimi, a fullstack Java Angular developer, With a deep passion for technology, and web design, I've honed my skills through years of hands-on experience and constant learning. Whether I'm working on my own projects or collaborating with others, I'm always eager to tackle new challenges and find creative solutions to complex problems. If you're looking for a skilled professional who can help you take your ideas to the next level, look no further! Please don't hesitate to <span class="text-color-blue" routerLink="/contact">contact me</span>.
+            </p>
+        </div>
+        <div class="flex flex-row justify-between items-center lg:justify-normal lg:items-start w-full lg:w-[40%] lg:mt-0 mt-5 order-1 lg:order-2 mb-7 ">
+            <div class="block lg:hidden w-[30%]">
+                <img class="rounded-full w-28 h-28 border-2 border-color-white" src="../../../assets/pics/profil-fotor.jpg" alt="profile">
+            </div>
+            
+            <div class="text-xs w-[63%] lg:w-[100%] lg:text-[15px] space-y-1 lg:space-y-4 lg:mt-1">
+                <p class="flex flex-row justify-between"><span class="text-color-blue">Age</span><span>22</span></p>
+                <p class="flex flex-row justify-between"><span class="text-color-blue">Country</span><span>Morocco</span></p>
+                <p class="flex flex-row justify-between"><span class="text-color-blue">Address</span><span>Beni Mellal</span></p>
+                <p class="flex flex-row justify-between"><span class="text-color-blue">Phone</span><span>+212 644 83 22 35</span></p>
+                <p class="flex flex-row justify-between"><span class="text-color-blue">E-mail</span><span>dlimiyassine08&#64;gmail.com</span></p>
+            </div>
+        </div>
+    </div>
+
+    <p class="title-2 mt-10">What <span class="text-color-blue">I Do</span></p>
+
+    <div class="flex lg:flex-row space-y-6 lg:space-y-0 flex-col  w-full justify-between mt-8">
+        <div class="lg:w-[45%]">
+            <div class="flex flex-col justify-center ">
+                <img class="w-12 h-12 animate-shaking" src="../../../assets/pics/backend.png" alt="backned">
+                <p class="title-3">For Backend</p>
+            </div>
+            <p>I master the essential aspects of backend development, whether building apps from scratch or maintaining them</p>
+        </div>
+        <div class="lg:w-[45%]">
+            <div class="flex flex-col justify-center ">
+                <img class="w-11 h-11 animate-shaking" src="../../../assets/pics/frontend.png" alt="frontend">
+                <p class="title-3">For Frontend</p>
+            </div>
+            <p>I handle the essential aspects of frontend development, including building smooth and user-friendly interfaces.</p>
+        </div>
+    </div>
+
+
+    <!-- for small screens -->
+    <div class="flex lg:hidden flex-col justify-center items-center">
+        <div class="flex flex-row space-x-8 mt-8">
+            <a href="https://www.linkedin.com/in/yassine-dlimi-4254b8280/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
+                    <path d="M7 10V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M11 13V17M11 13C11 11.3431 12.3431 10 14 10C15.6569 10 17 11.3431 17 13V17M11 13V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M7.00801 7L6.99902 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                </svg>
+            </a>
+            <a href="https://github.com/dlimiyassin" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
+                    <path d="M10 20.5675C6.57143 21.7248 3.71429 20.5675 2 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M10 22V18.7579C10 18.1596 10.1839 17.6396 10.4804 17.1699C10.6838 16.8476 10.5445 16.3904 10.1771 16.2894C7.13394 15.4528 5 14.1077 5 9.64606C5 8.48611 5.38005 7.39556 6.04811 6.4464C6.21437 6.21018 6.29749 6.09208 6.31748 5.9851C6.33746 5.87813 6.30272 5.73852 6.23322 5.45932C5.95038 4.32292 5.96871 3.11619 6.39322 2.02823C6.39322 2.02823 7.27042 1.74242 9.26698 2.98969C9.72282 3.27447 9.95075 3.41686 10.1515 3.44871C10.3522 3.48056 10.6206 3.41384 11.1573 3.28041C11.8913 3.09795 12.6476 3 13.5 3C14.3524 3 15.1087 3.09795 15.8427 3.28041C16.3794 3.41384 16.6478 3.48056 16.8485 3.44871C17.0493 3.41686 17.2772 3.27447 17.733 2.98969C19.7296 1.74242 20.6068 2.02823 20.6068 2.02823C21.0313 3.11619 21.0496 4.32292 20.7668 5.45932C20.6973 5.73852 20.6625 5.87813 20.6825 5.9851C20.7025 6.09207 20.7856 6.21019 20.9519 6.4464C21.6199 7.39556 22 8.48611 22 9.64606C22 14.1077 19.8661 15.4528 16.8229 16.2894C16.4555 16.3904 16.3162 16.8476 16.5196 17.1699C16.8161 17.6396 17 18.1596 17 18.7579V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
+    
+    </div>
+</div>

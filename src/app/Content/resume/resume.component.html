@@ -1,0 +1,151 @@
+<div >
+    <p class="hidden lg:block font-spartan text-2xl">Resume</p>
+
+    <div class="flex mt-0 flex-col lg:flex-row justify-between">
+        <!-- left side -->
+        <div class="lg:w-[50%] mt-0 lg:space-y-10">
+
+            <!-- education -->
+            <div>
+                <p class="title-2 lg:mt-10 mb-5">Education</p>
+                @if (educations) {
+                    <div class="timeline relative border-l-2 border-gray-600 ml-28 pl-4">
+                        @for (education of educations; track $index) {
+                            <div class="timeline-item mb-8 flex items-start">
+                                <div class="timeline-year absolute left-[-60px] ">
+                                    <span class="text-sm font-Montserrat-semibold text-gray-100">{{education.year}}</span> 
+                                </div>
+                                <div class="circle-container absolute left-[-11px] ">
+                                    <div class="outer-circle">
+                                        <div class="middle-circle">
+                                            <div class="inner-circle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-content ml-4">
+                                    <h3 class="text-base font-Montserrat-semibold">{{education.title}}</h3>
+                                    <p class="text-sm text-gray-400">{{education.school}}</p>
+                                </div>
+                            </div>
+                        }
+    
+                    </div>
+                }
+                
+                
+                  
+            </div>
+
+            <!-- experiance -->
+            <div>
+                <p class="title-2 mb-5">Experiance</p>
+                @if (experiances) {
+                    <div class="timeline-exp relative border-l-2 border-gray-600 ml-28 pl-4">
+                        @for (experiance of experiances; track $index) {
+                            <div class="timeline-item-exp mb-8 flex items-start">
+                                <div class="timeline-year-exp absolute left-[-60px] ">
+                                    <span class="text-sm font-Montserrat-semibold text-gray-100">{{experiance.starting_date}}</span> 
+                                    <span class="text-sm font-Montserrat-semibold text-gray-100">{{experiance.ending_date}}</span> 
+                                    <span class="text-sm font-Montserrat-semibold text-gray-500 mt-2">{{experiance.comapny}}</span> 
+                                    
+                                </div>
+                                <div class="circle-container-exp absolute left-[-11px] ">
+                                    <div class="outer-circle-exp">
+                                        <div class="middle-circle-exp">
+                                            <div class="inner-circle-exp"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-content-exp ml-4">
+                                    <h3 class="text-base font-Montserrat-semibold">{{experiance.post}}</h3>
+                                    <p class="text-sm text-gray-400">{{experiance.description}}</p>
+                                </div>
+                            </div>
+                        }
+    
+                    </div>
+                }
+            </div>
+        </div>
+
+
+        <!-- skills -->
+        <div class="lg:w-[40%]">
+            <p class="title-2 lg:mt-10">Skills</p>
+
+
+            @if (langauges) {
+                <p class="text-base font-spartan mt-6">Programing Langauges</p>
+                @for (skill of langauges; track $index) {
+                    <div  #progressBars class="mb-3">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium text-blue-700 dark:text-white">{{skill.title}}</span>
+                            <span class="text-xs font-medium text-blue-700 dark:text-gray-300">{{skill.progress}}%</span>
+                          </div>
+                          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                            <div class="bg-color-blue h-2.5 rounded-full"
+                                [ngStyle]="{ '--progress-width': skill.progress + '%' }"
+                                [ngClass]="{ 'animate-progress': animate }">
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+            @if (framworks) {
+                <p class="text-base font-spartan mt-8">Framworks</p>
+                @for (skill of framworks; track $index) {
+                    <div #progressBars class="mb-3">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium text-blue-700 dark:text-white">{{skill.title}}</span>
+                            <span class="text-xs font-medium text-blue-700 dark:text-gray-300">{{skill.progress}}%</span>
+                          </div>
+                          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                            <div class="bg-[#8b60b6] h-2.5 rounded-full" 
+                                [ngStyle]="{ '--progress-width': skill.progress + '%' }"
+                                [ngClass]="{ 'animate-progress': animate }">
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+
+            @if (database) {
+                <p class="text-base font-spartan mt-8">Database</p>
+                @for (skill of database; track $index) {
+                    <div #progressBars class="mb-3">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium text-blue-700 dark:text-white">{{skill.title}}</span>
+                            <span class="text-xs font-medium text-blue-700 dark:text-gray-300">{{skill.progress}}%</span>
+                          </div>
+                          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                            <div class="bg-[#96E9C6] h-2.5 rounded-full" 
+                                [ngStyle]="{ '--progress-width': skill.progress + '%' }"
+                                [ngClass]="{ 'animate-progress': animate }">
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+            @if (langes) {
+                <p class="text-base font-spartan mt-8">Communication skills</p>
+                @for (skill of langes; track $index) {
+                    <div #progressBars class="mb-3">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium text-blue-700 dark:text-white">{{skill.title}}</span>
+                            <span class="text-xs font-medium text-blue-700 dark:text-gray-300">{{skill.progress}}%</span>
+                          </div>
+                          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                            <div class="bg-[#FFFD8C] h-2.5 rounded-full" 
+                                [ngStyle]="{ '--progress-width': skill.progress + '%' }"
+                                [ngClass]="{ 'animate-progress': animate }">
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

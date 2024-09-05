@@ -1,0 +1,139 @@
+@keyframes fillProgress {
+    from {
+      width: 0;
+    }
+    to {
+      width: var(--progress-width);
+    }
+  }
+  
+  .animate-progress {
+    animation: fillProgress 2s forwards;
+  }
+  
+  
+  
+
+.circle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px; /* Adjust based on your needs */
+}
+
+.outer-circle {
+    background-color: rgba(135, 206, 235, 0.5); /* Sky Blue with 50% opacity */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.middle-circle {
+    background-color: #40A2D8; /* Blue color */
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-circle {
+    background-color: #1c1c1c; /* Gray color */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.timeline {
+    position: relative;
+}
+
+.timeline-year {
+    position: absolute;
+    left: -65px; /* Adjust as needed */
+    width: 78px;
+    transform: translateY(-5px);
+    transform: translateX(-28px);
+    text-align: right;
+}
+
+.timeline-year span {
+    display: block;
+    font:600 /* Color for the year text */
+}
+.timeline-content {
+    transform: translateY(-4px);
+}
+
+
+
+
+
+
+
+
+
+
+.circle-container-exp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px; /* Adjust based on your needs */
+}
+
+.outer-circle-exp {
+    background-color: rgba(135, 206, 235, 0.5); /* Sky Blue with 50% opacity */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.middle-circle-exp {
+    background-color: #8b60b6; /* Blue color */
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-circle-exp {
+    background-color: #1c1c1c; /* Gray color */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.timeline-exp {
+    position: relative;
+}
+
+.timeline-year-exp {
+    position: absolute;
+    left: -64px; /* Adjust as needed */
+    width: 78px;
+    transform: translateY(-5px);
+    transform: translateX(-28px);
+    text-align: right;
+}
+
+.timeline-year-exp span {
+    display: block;
+    font:600 /* Color for the year text */
+}
+.timeline-content-exp {
+    transform: translateY(-4px);
+}
+
+
+  

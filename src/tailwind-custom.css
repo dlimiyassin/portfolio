@@ -1,0 +1,11 @@
+.title-1 {
+    @apply mb-7 font-spartan text-2xl;
+  }
+
+.title-2 {
+    @apply font-spartan text-lg;
+}
+
+.title-3 {
+  @apply mt-2 font-spartan text-base;
+}
