@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'resume', component: ResumeComponent, data: { animation: 'ResumePage' } },
   { path: 'projects', component: ProjectsComponent, data: { animation: 'ProjectsPage' } },
   { path: 'contact', component: ContactComponent, data: { animation: 'ContactPage' } },
+  { path: '**', redirectTo: '' }
 ];
 
 
