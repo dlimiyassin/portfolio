@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './Content/home/home.component';
-import { ContactComponent } from './Content/contact/contact.component';
-import { AboutComponent } from './Content/about/about.component';
-import { ProjectsComponent } from './Content/projects/projects.component';
-import { ResumeComponent } from './Content/resume/resume.component';
+import { HomeComponent } from '../src/app/Content/home/home.component';
+import { ContactComponent } from '../src/app/Content/contact/contact.component';
+import { AboutComponent } from '../src/app/Content/about/about.component';
+import { ProjectsComponent } from '../src/app/Content/projects/projects.component';
+import { ResumeComponent } from '../src/app/Content/resume/resume.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
@@ -17,7 +17,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
