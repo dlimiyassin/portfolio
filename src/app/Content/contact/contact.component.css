@@ -102,3 +102,50 @@
   
   
   
+
+
+
+
+
+
+
+
+
+  .relative {
+    position: relative; /* Ensure that the parent container is positioned */
+}
+
+.dots-pattern {
+    position: absolute; /* Ensure the dots are positioned absolutely within the relative container */
+    bottom: 25px; /* Ajuster pour que ce soit sous le texte */
+    right: -30px; /* Adjust alignment to the right */
+    width: 48px; /* 8 dots * 6px size */
+    height: 24px; /* 4 dots * 6px size */
+    background-image: radial-gradient(circle, #40A2D8 1px, transparent 1px);
+    background-size: 6px 6px; /* Dot size with spacing */
+    opacity: 65%;
+    z-index: 0; /* Behind the text */
+}
+
+.title-1 {
+    position: relative; /* Ensure the text has a stacking context */
+    z-index: 10; /* Ensure the text is in front of the dots */
+}
+
+
+.font-FreightBlack-Regular {
+  position: relative; 
+  z-index: 10; 
+}
+
+.dots-pattern-t2 {
+  position: absolute; /* Ensure the dots are positioned absolutely within the relative container */
+  bottom: -5px; /* Ajuster pour que ce soit sous le texte */
+  right: -20px; /* Adjust alignment to the right */
+  width: 54px; /* 8 dots * 6px size */
+  height: 24px; /* 4 dots * 6px size */
+  background-image: radial-gradient(circle, #40A2D8 1px, transparent 1px);
+  background-size: 6px 6px; /* Dot size with spacing */
+  opacity: 60%;
+  z-index: 0; /* Behind the text */
+}

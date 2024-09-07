@@ -1,5 +1,9 @@
 <div >
-    <p class="hidden lg:block font-spartan text-2xl">Resume</p>
+    <div class="hidden lg:inline-block relative">
+        <p class="font-spartan text-2xl z-10">Resume</p>
+        <div class="dots-pattern"></div>
+    </div>
+    
 
     <div class="flex mt-0 flex-col lg:flex-row justify-between">
         <!-- left side -->
@@ -7,7 +11,10 @@
 
             <!-- education -->
             <div>
-                <p class="title-2 lg:mt-10 mb-5">Education</p>
+                <div class="inline-block relative">
+                    <p class="title-2 lg:mt-10 mb-5 z-10">Education</p>
+                    <div class="dots-pattern-t2"></div>
+                </div>
                 @if (educations) {
                     <div class="timeline relative border-l-2 border-gray-600 ml-28 pl-4">
                         @for (education of educations; track $index) {
@@ -38,7 +45,10 @@
 
             <!-- experiance -->
             <div>
-                <p class="title-2 mb-5">Experiance</p>
+                <div class="inline-block relative">
+                    <p class="title-2 mb-5 z-10">Experiance</p>
+                    <div class="dots-pattern-t2"></div>
+                </div>
                 @if (experiances) {
                     <div class="timeline-exp relative border-l-2 border-gray-600 ml-28 pl-4">
                         @for (experiance of experiances; track $index) {
@@ -71,8 +81,10 @@
 
         <!-- skills -->
         <div class="lg:w-[40%]">
-            <p class="title-2 lg:mt-10">Skills</p>
-
+            <div class="inline-block relative">
+                <p class="title-2 lg:mt-10 z-10">Skills</p>
+                <div class="dots-pattern-skills"></div>
+            </div>
 
             @if (langauges) {
                 <p class="text-base font-spartan mt-6">Programing Langauges</p>
