@@ -53,9 +53,9 @@
     </div>
 
 
-    <div class="flex flex-col lg:justify-between lg:flex-row mb-10">   
+    <div class="flex flex-col lg:justify-between lg:flex-row mb-1">   
 
-        <div class="lg:w-[45%] mb-10 lg:mb-0 text-xs lg:text-[15px] space-y-1 lg:space-y-4 lg:mt-1 bg-color-gray p-3 rounded-md">
+        <div class="lg:w-[45%] mb-5 lg:mb-0 text-xs lg:text-[15px] space-y-1 lg:space-y-4 lg:mt-1 bg-color-gray p-3 rounded-md">
             <div class="flex flex-row items-center">
                 <div class="w-16">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#40a2d8" fill="none">
@@ -99,11 +99,11 @@
         <p class="title-2 mt-10 z-10">Thechnologies</p>
         <div class="dots-pattern-t2"></div>
     </div>
-    <div class="flex flex-row space-x-2 text-xs">
-    @for (skill of project?.technologies; track $index) {
-            <div class="bg-color-gray py-1 px-2 rounded-lg ">
-                {{skill}}
-            </div>
+    <div class="flex flex-wrap gap-2 text-xs">
+        @for (skill of project?.technologies; track $index) {
+          <div class="bg-color-gray py-1 px-2 rounded-lg">
+            {{skill}}
+          </div>
         }
-    </div>
+      </div>      
 </div>

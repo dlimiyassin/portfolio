@@ -61,10 +61,10 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
 
 oncf: Project = {
   title : 'Oncf',
-  description : '',
-  link : '',
-  client: '',
-  date : '',
+  description : 'The main objective is to facilitate the management of employees of a company, by offering them the possibility of taking exams in order to assess their professional progress within the organization.',
+  link : 'https://github.com/dlimiyassin/oncf',
+  client: 'Training Edge Consulting',
+  date : '30-10-2023',
   images : [
     {
       itemImageSrc: '../../../assets/pics/oncf/1.jfif',
@@ -101,15 +101,29 @@ oncf: Project = {
       thumbnailImageSrc: '../../../assets/pics/oncf/9.jfif',
     },
   ],
-  technologies :  []
+  technologies :  [
+    "Spring Boot", 
+    "Spring Security & JWT", 
+    "Vérification par e-mail", 
+    "Swagger", 
+    "AWS EB", 
+    "S3",
+    "Angular", 
+    "rxjs", 
+    "Guards", 
+    "Interceptors", 
+    "Validation", 
+    "ngx", 
+    "Bootstrap"
+  ]
 }
 
 career: Project = {
   title : 'Career-Hub',
-  description : '',
-  link : '',
-  client: '',
-  date : '',
+  description : 'This is a recruiting platform that allows recruiters to post jobs and candidates to apply. This platform is developed with Angular and uses json-server as a database.',
+  link : 'https://github.com/dlimiyassin/CareerHub',
+  client: 'Learning purpose',
+  date : '11-05-2024',
   images : [
     {
       itemImageSrc: '../../../assets/pics/career/1.jfif',
@@ -154,7 +168,10 @@ career: Project = {
       thumbnailImageSrc: '../../../assets/pics/career/11.jfif',
     },
   ],
-  technologies :  []
+  technologies :  [
+    'Angular',
+    'Tailwind CSS'
+  ]
 }
 
   jit!: Project
