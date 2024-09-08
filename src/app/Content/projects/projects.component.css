@@ -18,3 +18,47 @@
     position: relative; /* Ensure the text has a stacking context */
     z-index: 10; /* Ensure the text is in front of the dots */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.carousel-container {
+    overflow-y: hidden;
+}
+
+@media (max-width: 768px) {
+    .carousel-container p-carousel {
+        height: auto; /* Adjust height automatically based on content */
+        max-height: 100vh; /* Limit max height to viewport height */
+        overflow-y: hidden;
+    }
+
+    .carousel-container .p-carousel-content {
+        max-height: 100vh; /* Make sure only one item takes up the full height */
+        overflow-y: hidden;
+    }
+
+    .carousel-container .p-carousel-item {
+        height: 100%; /* Make each carousel item take up the full available height */
+        display: flex;
+        align-items: center; /* Center content vertically */
+        justify-content: center;
+        overflow-y: hidden;
+    }
+}
+
+img {
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+}
+
+img:hover {
+    transform: scale(1.1); /* Zoom in by 10% */
+}

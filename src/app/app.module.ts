@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
+import { ProjectViewComponent } from './Content/project-view/project-view.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { TagModule } from 'primeng/tag';
     ProjectsComponent,
     MinibarComponent,
     SpinnerComponent,
+    ProjectViewComponent,
   ],
   imports: [
     BrowserModule,

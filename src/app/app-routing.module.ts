@@ -5,6 +5,7 @@ import { ContactComponent } from './Content/contact/contact.component';
 import { HomeComponent } from './Content/home/home.component';
 import { ProjectsComponent } from './Content/projects/projects.component';
 import { ResumeComponent } from './Content/resume/resume.component';
+import { ProjectViewComponent } from './Content/project-view/project-view.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'resume', component: ResumeComponent, data: { animation: 'ResumePage' } },
   { path: 'projects', component: ProjectsComponent, data: { animation: 'ProjectsPage' } },
   { path: 'contact', component: ContactComponent, data: { animation: 'ContactPage' } },
+  { path: 'project/:name', component: ProjectViewComponent, data: { animation: 'ProjectViewPage' } },
   { path: '**', redirectTo: '' }
 ];
 

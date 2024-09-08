@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
@@ -6,6 +7,33 @@ import { Component } from '@angular/core';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+
+  projects: any[] = [
+    {
+      name:'uir-shop',
+      description : 'E-commerce platform',
+      img : '../../../assets/pics/uir-shop.jfif'
+    },
+    {
+      name:'oncf',
+      description : 'Employee management platform',
+      img : '../../../assets/pics/oncf.jfif'
+    },    {
+      name:'career-hub',
+      description : 'Recretument platform',
+      img : '../../../assets/pics/career-hub.jfif'
+    }
+
+  ];
+
+  
+  isSmallScreen: boolean = false;
+
+  constructor(private route : Router){
+    this.checkScreenSize();
+  }
+
+
   ngOnInit(): void {
     this.scrollToTop();
   }
@@ -17,43 +45,21 @@ export class ProjectsComponent {
   }
 
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkScreenSize();
+  }
 
-  projects: any[] = [
-    {
-      name:'uir-shop',
-      description : 'description',
-      img : '../../../assets/pics/uir-shop.jfif'
-    },
-    {
-      name:'oncf',
-      description : 'description',
-      img : '../../../assets/pics/oncf.jfif'
-    },    {
-      name:'career-hub',
-      description : 'description',
-      img : '../../../assets/pics/career-hub.jfif'
+  checkScreenSize() {
+    this.isSmallScreen = window.innerWidth < 768;
+  }
+
+
+  redirectToProject(name: string | undefined) {
+    if (name) {
+      this.route.navigateByUrl(`project/${name}`);
     }
-
-  ];
-
-  responsiveOptions: any[] = [
-    {
-        breakpoint: '1024px',
-        numVisible: 3,
-        numScroll: 3
-    },
-    {
-        breakpoint: '768px',
-        numVisible: 2,
-        numScroll: 2
-    },
-    {
-        breakpoint: '560px',
-        numVisible: 1,
-        numScroll: 1
-    }
-];;
-
+  }
   
 
 
