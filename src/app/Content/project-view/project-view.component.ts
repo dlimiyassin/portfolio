@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit, OnDestroy, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
 import { Galleria } from 'primeng/galleria';
 import { ActivatedRoute } from '@angular/router';
+import { title } from 'process';
 
 @Component({
   selector: 'app-project-view',
@@ -8,35 +9,63 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./project-view.component.css']
 })
 export class ProjectViewComponent implements OnInit, OnDestroy {
-  projectName: string | null = null;
 
   constructor(@Inject(PLATFORM_ID) private platformId: any, private route: ActivatedRoute, private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    // Subscribe to route parameters
     this.route.paramMap.subscribe(params => {
-      this.projectName = params.get('name');
+      this.snycProject(params.get('name')) ;
     });
     this.bindDocumentListeners();
-    this.images=this.oncf
+    
+  }
+  snycProject(projectName : string | null){
+    switch(projectName){
+      case 'Uir-Shop' : this.project = this.uir; break;
+      case 'Oncf' : this.project = this.oncf; break;
+      case 'Career-Hub' : this.project = this.career; break;
+      case 'E-Learning' : this.project = this.learning; break;
+      case 'Jit-Pilote' : this.project = this.jit; break;
+      default : this.project = this.uir; break;
+    }
   }
 
-  uir:any[] | undefined = [
-    {
-      itemImageSrc: '../../../assets/pics/uir/1.jfif',
-      thumbnailImageSrc: '../../../assets/pics/uir/1.jfif',
-    },
-    {
-      itemImageSrc: '../../../assets/pics/uir/2.jfif',
-      thumbnailImageSrc: '../../../assets/pics/uir/2.jfif',
-    },
-    {
-      itemImageSrc: '../../../assets/pics/uir/3.jfif',
-      thumbnailImageSrc: '../../../assets/pics/uir/3.jfif',
-    },
+  project : Project | undefined;
 
-  ]
-  oncf:any[] | undefined = [
+  uir: Project = {
+      title : 'Uir-Shop',
+      description : 'UIR-SHOP is an e-commerce platform',
+      link : 'https://uirshop.jobintech.net/',
+      client: 'for International University of Rabat',
+      date : '15-06-2024',
+      images : [
+        {
+          itemImageSrc: '../../../assets/pics/uir/1.jfif',
+          thumbnailImageSrc: '../../../assets/pics/uir/1.jfif',
+        },
+        {
+          itemImageSrc: '../../../assets/pics/uir/2.jfif',
+          thumbnailImageSrc: '../../../assets/pics/uir/2.jfif',
+        },
+        {
+          itemImageSrc: '../../../assets/pics/uir/3.jfif',
+          thumbnailImageSrc: '../../../assets/pics/uir/3.jfif',
+        },
+      ],
+      technologies :  [
+        'Spring Boot',
+        'Angular',
+        'Tailwind CSS'
+      ]
+}
+
+oncf: Project = {
+  title : 'Oncf',
+  description : '',
+  link : '',
+  client: '',
+  date : '',
+  images : [
     {
       itemImageSrc: '../../../assets/pics/oncf/1.jfif',
       thumbnailImageSrc: '../../../assets/pics/oncf/1.jfif',
@@ -71,8 +100,17 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
       itemImageSrc: '../../../assets/pics/oncf/9.jfif',
       thumbnailImageSrc: '../../../assets/pics/oncf/9.jfif',
     },
-  ]
-  career:any[] | undefined = [
+  ],
+  technologies :  []
+}
+
+career: Project = {
+  title : 'Career-Hub',
+  description : '',
+  link : '',
+  client: '',
+  date : '',
+  images : [
     {
       itemImageSrc: '../../../assets/pics/career/1.jfif',
       thumbnailImageSrc: '../../../assets/pics/career/1.jfif',
@@ -115,12 +153,13 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
       itemImageSrc: '../../../assets/pics/career/11.jfif',
       thumbnailImageSrc: '../../../assets/pics/career/11.jfif',
     },
-  ]
+  ],
+  technologies :  []
+}
 
-  jit:any[] | undefined = []
-  learning:any[] | undefined = []
+  jit!: Project
+  learning!: Project
 
-  images: any[] | undefined 
   showThumbnails: boolean | undefined;
   fullscreen: boolean = false;
   activeIndex: number = 0;
@@ -197,4 +236,25 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
   fullScreenIcon() {
     return `pi ${this.fullscreen ? 'pi-window-minimize' : 'pi-window-maximize'}`;
   }
+}
+
+
+export class Project {
+  title:string;
+  description : string;
+  link : string;
+  client : string;
+  date : string;
+  images : any[] | undefined;
+  technologies : string[]
+  constructor(title : string, desc : string, link:string, date:string, client:string, images : any[] | undefined, techs : string[]){
+    this.title=title;
+    this.description=desc;
+    this.link=link;
+    this.client=client;
+    this.date=date;
+    this.images=images;
+    this.technologies=techs;
+  }
+
 }

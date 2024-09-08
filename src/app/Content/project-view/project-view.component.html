@@ -1,7 +1,7 @@
 <div>
     <div class="flex flex-row justify-between">
         <div class="hidden lg:inline-block relative">
-            <p class="title-1 z-10">{{projectName}}</p>
+            <p class="title-1 z-10">{{project?.title}}</p>
             <div class="dots-pattern"></div>
         </div>
         <div>
@@ -16,7 +16,7 @@
     <div class="card mb-10">
         <p-galleria
             #galleria
-            [value]="images"
+            [value]="project?.images"
             [(activeIndex)]="activeIndex"
             [numVisible]="5"
             [showThumbnails]="showThumbnails"
@@ -42,8 +42,8 @@
                 <div class="custom-galleria-footer">
                     <button type="button" pButton icon="pi pi-list" (click)="onThumbnailButtonClick()">
                     </button>
-                    <span *ngIf="images" class="title-container">
-                        <span>{{ activeIndex + 1 }}/{{ images.length }}</span>
+                    <span *ngIf="project?.images" class="title-container">
+                        <span>{{ activeIndex + 1 }}/{{ project?.images?.length }}</span>
                     </span>
                     <button type="button" pButton [icon]="fullScreenIcon()" (click)="toggleFullScreen()" class="fullscreen-button">
                     </button>
@@ -66,7 +66,7 @@
                         <path d="M3 8H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
-                <span>10-10-2023</span>
+                <span>{{project?.date}}</span>
             </div>
             <div class="flex flex-row items-center">
                 <div class="w-16">
@@ -77,7 +77,7 @@
                         <path d="M11.5 22V18C11.5 17.0572 11.5 16.5858 11.2071 16.2929C10.9142 16 10.4428 16 9.5 16H8.5C7.55719 16 7.08579 16 6.79289 16.2929C6.5 16.5858 6.5 17.0572 6.5 18V22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
                     </svg>
                 </div>
-                <span>For UIR</span>
+                <span>{{project?.client}}</span>
             </div>
             <div class="flex flex-row items-center">
                 <div class="w-16">
@@ -86,11 +86,11 @@
                         <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
                     </svg>
                 </div>
-                <span>link</span>
+                <a href="{{project?.link}}" target="_blank" class="text-gray-400">{{project?.link}}</a>
             </div>
         </div>
 
-        <div class="lg:w-[45%] bg-color-gray p-3 rounded-md">description</div>
+        <div class="lg:w-[45%] bg-color-gray p-3 rounded-md">{{project?.description}}</div>
 
     </div>
 
@@ -99,13 +99,11 @@
         <p class="title-2 mt-10 z-10">Thechnologies</p>
         <div class="dots-pattern-t2"></div>
     </div>
-
     <div class="flex flex-row space-x-2 text-xs">
-        <div class="bg-color-gray py-1 px-2 rounded-lg ">
-            Spring booot
-        </div>
-        <div class="bg-color-gray p-1 rounded ">
-            Angular
-        </div>
+    @for (skill of project?.technologies; track $index) {
+            <div class="bg-color-gray py-1 px-2 rounded-lg ">
+                {{skill}}
+            </div>
+        }
     </div>
 </div>
