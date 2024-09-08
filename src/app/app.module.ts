@@ -12,8 +12,9 @@ import { ProjectsComponent } from './Content/projects/projects.component';
 import { MinibarComponent } from './minibar/minibar.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
-
+import { TagModule } from 'primeng/tag';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,9 @@ import { ButtonModule } from 'primeng/button';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ButtonModule
+    TagModule,
+    ButtonModule,
+    CarouselModule
   ],
   providers: [
     provideClientHydration()

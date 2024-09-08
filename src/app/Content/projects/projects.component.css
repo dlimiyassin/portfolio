@@ -14,7 +14,7 @@
     z-index: 0; /* Behind the text */
 }
 
-.title-1 {
+.font-spartan {
     position: relative; /* Ensure the text has a stacking context */
     z-index: 10; /* Ensure the text is in front of the dots */
 }
