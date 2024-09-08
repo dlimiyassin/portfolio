@@ -40,16 +40,16 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
       date : '15-06-2024',
       images : [
         {
-          itemImageSrc: '../../../assets/pics/uir/1.jfif',
-          thumbnailImageSrc: '../../../assets/pics/uir/1.jfif',
+          itemImageSrc: 'assets/pics/uir/1.jfif',
+          thumbnailImageSrc: 'assets/pics/uir/1.jfif',
         },
         {
-          itemImageSrc: '../../../assets/pics/uir/2.jfif',
-          thumbnailImageSrc: '../../../assets/pics/uir/2.jfif',
+          itemImageSrc: 'assets/pics/uir/2.jfif',
+          thumbnailImageSrc: 'assets/pics/uir/2.jfif',
         },
         {
-          itemImageSrc: '../../../assets/pics/uir/3.jfif',
-          thumbnailImageSrc: '../../../assets/pics/uir/3.jfif',
+          itemImageSrc: 'assets/pics/uir/3.jfif',
+          thumbnailImageSrc: 'assets/pics/uir/3.jfif',
         },
       ],
       technologies :  [
@@ -67,38 +67,38 @@ oncf: Project = {
   date : '30-10-2023',
   images : [
     {
-      itemImageSrc: '../../../assets/pics/oncf/1.jfif',
-      thumbnailImageSrc: '../../../assets/pics/oncf/1.jfif',
+      itemImageSrc: 'assets/pics/oncf/1.jfif',
+      thumbnailImageSrc: 'assets/pics/oncf/1.jfif',
     },
     {
-      itemImageSrc: '../../../assets/pics/oncf/2.jfif',
-      thumbnailImageSrc: '../../../assets/pics/oncf/2.jfif',
+      itemImageSrc: 'assets/pics/oncf/2.jfif',
+      thumbnailImageSrc: 'assets/pics/oncf/2.jfif',
     },
     {
-      itemImageSrc: '../../../assets/pics/oncf/3.jfif',
-      thumbnailImageSrc: '../../../assets/pics/oncf/3.jfif',
+      itemImageSrc: 'assets/pics/oncf/3.jfif',
+      thumbnailImageSrc: 'assets/pics/oncf/3.jfif',
     },
     {
-      itemImageSrc: '../../../assets/pics/oncf/4.jfif',
-      thumbnailImageSrc: '../../../assets/pics/oncf/4.jfif',
+      itemImageSrc: 'assets/pics/oncf/4.jfif',
+      thumbnailImageSrc: 'assets/pics/oncf/4.jfif',
     },
     {
-      itemImageSrc: '../../../assets/pics/oncf/5.jfif',
-      thumbnailImageSrc: '../../../assets/pics/oncf/5.jfif',
+      itemImageSrc: 'assets/pics/oncf/5.jfif',
+      thumbnailImageSrc: 'assets/pics/oncf/5.jfif',
     },
     {
-      itemImageSrc: '../../../assets/pics/oncf/6.jfif',
-      thumbnailImageSrc: '../../../assets/pics/oncf/6.jfif',
+      itemImageSrc: 'assets/pics/oncf/6.jfif',
+      thumbnailImageSrc: 'assets/pics/oncf/6.jfif',
     },
     {
-      itemImageSrc: '../../../assets/pics/oncf/7.jfif',
-      thumbnailImageSrc: '../../../assets/pics/oncf/7.jfif',
+      itemImageSrc: 'assets/pics/oncf/7.jfif',
+      thumbnailImageSrc: 'assets/pics/oncf/7.jfif',
     },    {
-      itemImageSrc: '../../../assets/pics/oncf/8.jfif',
-      thumbnailImageSrc: '../../../assets/pics/oncf/8.jfif',
+      itemImageSrc: 'assets/pics/oncf/8.jfif',
+      thumbnailImageSrc: 'assets/pics/oncf/8.jfif',
     },    {
-      itemImageSrc: '../../../assets/pics/oncf/9.jfif',
-      thumbnailImageSrc: '../../../assets/pics/oncf/9.jfif',
+      itemImageSrc: 'assets/pics/oncf/9.jfif',
+      thumbnailImageSrc: 'assets/pics/oncf/9.jfif',
     },
   ],
   technologies :  [
@@ -126,46 +126,46 @@ career: Project = {
   date : '11-05-2024',
   images : [
     {
-      itemImageSrc: '../../../assets/pics/career/1.jfif',
-      thumbnailImageSrc: '../../../assets/pics/career/1.jfif',
+      itemImageSrc: 'assets/pics/career/1.jfif',
+      thumbnailImageSrc: 'assets/pics/career/1.jfif',
     },
     {
-      itemImageSrc: '../../../assets/pics/career/2.jfif',
-      thumbnailImageSrc: '../../../assets/pics/career/2.jfif',
+      itemImageSrc: 'assets/pics/career/2.jfif',
+      thumbnailImageSrc: 'assets/pics/career/2.jfif',
     },
     {
-      itemImageSrc: '../../../assets/pics/career/3.jfif',
-      thumbnailImageSrc: '../../../assets/pics/career/3.jfif',
+      itemImageSrc: 'assets/pics/career/3.jfif',
+      thumbnailImageSrc: 'assets/pics/career/3.jfif',
     },
     {
-      itemImageSrc: '../../../assets/pics/career/4.jfif',
-      thumbnailImageSrc: '../../../assets/pics/career/4.jfif',
+      itemImageSrc: 'assets/pics/career/4.jfif',
+      thumbnailImageSrc: 'assets/pics/career/4.jfif',
     },
     {
-      itemImageSrc: '../../../assets/pics/career/5.jfif',
-      thumbnailImageSrc: '../../../assets/pics/career/5.jfif',
+      itemImageSrc: 'assets/pics/career/5.jfif',
+      thumbnailImageSrc: 'assets/pics/career/5.jfif',
     },
     {
-      itemImageSrc: '../../../assets/pics/career/6.jfif',
-      thumbnailImageSrc: '../../../assets/pics/career/6.jfif',
+      itemImageSrc: 'assets/pics/career/6.jfif',
+      thumbnailImageSrc: 'assets/pics/career/6.jfif',
     },
     {
-      itemImageSrc: '../../../assets/pics/career/7.jfif',
-      thumbnailImageSrc: '../../../assets/pics/career/7.jfif',
+      itemImageSrc: 'assets/pics/career/7.jfif',
+      thumbnailImageSrc: 'assets/pics/career/7.jfif',
     },    {
-      itemImageSrc: '../../../assets/pics/career/8.jfif',
-      thumbnailImageSrc: '../../../assets/pics/career/8.jfif',
+      itemImageSrc: 'assets/pics/career/8.jfif',
+      thumbnailImageSrc: 'assets/pics/career/8.jfif',
     },    {
-      itemImageSrc: '../../../assets/pics/career/9.jfif',
-      thumbnailImageSrc: '../../../assets/pics/career/9.jfif',
+      itemImageSrc: 'assets/pics/career/9.jfif',
+      thumbnailImageSrc: 'assets/pics/career/9.jfif',
     },
     ,    {
-      itemImageSrc: '../../../assets/pics/career/10.jfif',
-      thumbnailImageSrc: '../../../assets/pics/career/10.jfif',
+      itemImageSrc: 'assets/pics/career/10.jfif',
+      thumbnailImageSrc: 'assets/pics/career/10.jfif',
     },
     ,    {
-      itemImageSrc: '../../../assets/pics/career/11.jfif',
-      thumbnailImageSrc: '../../../assets/pics/career/11.jfif',
+      itemImageSrc: 'assets/pics/career/11.jfif',
+      thumbnailImageSrc: 'assets/pics/career/11.jfif',
     },
   ],
   technologies :  [
