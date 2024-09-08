@@ -12,16 +12,16 @@ export class ProjectsComponent {
     {
       name:'Uir-Shop',
       description : 'E-commerce platform',
-      img : '../../../assets/pics/uir-shop.jfif'
+      img : '../../../assets/pics/uir/1.jfif'
     },
     {
       name:'Oncf',
       description : 'Employee management platform',
-      img : '../../../assets/pics/oncf.jfif'
+      img : '../../../assets/pics/oncf/1.jfif'
     },    {
       name:'Career-Hub',
       description : 'Recretument platform',
-      img : '../../../assets/pics/career-hub.jfif'
+      img : '../../../assets/pics/career/1.jfif'
     }
 
   ];

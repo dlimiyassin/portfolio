@@ -18,28 +18,109 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
       this.projectName = params.get('name');
     });
     this.bindDocumentListeners();
+    this.images=this.oncf
   }
 
-  images: any[] | undefined = [
+  uir:any[] | undefined = [
     {
-      itemImageSrc: '../../../assets/pics/uir-shop.jfif',
-      thumbnailImageSrc: '../../../assets/pics/uir-shop.jfif',
-      alt: 'uirshop',
-      title: 'uirshop'
-  },
-  {
-    itemImageSrc: '../../../assets/pics/career-hub.jfif',
-    thumbnailImageSrc: '../../../assets/pics/career-hub.jfif',
-    alt: 'career',
-    title: 'career'
-},
-{
-  itemImageSrc: '../../../assets/pics/oncf.jfif',
-  thumbnailImageSrc: '../../../assets/pics/oncf.jfif',
-  alt: 'oncf',
-  title: 'oncf'
-}
-  ];
+      itemImageSrc: '../../../assets/pics/uir/1.jfif',
+      thumbnailImageSrc: '../../../assets/pics/uir/1.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/uir/2.jfif',
+      thumbnailImageSrc: '../../../assets/pics/uir/2.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/uir/3.jfif',
+      thumbnailImageSrc: '../../../assets/pics/uir/3.jfif',
+    },
+
+  ]
+  oncf:any[] | undefined = [
+    {
+      itemImageSrc: '../../../assets/pics/oncf/1.jfif',
+      thumbnailImageSrc: '../../../assets/pics/oncf/1.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/oncf/2.jfif',
+      thumbnailImageSrc: '../../../assets/pics/oncf/2.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/oncf/3.jfif',
+      thumbnailImageSrc: '../../../assets/pics/oncf/3.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/oncf/4.jfif',
+      thumbnailImageSrc: '../../../assets/pics/oncf/4.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/oncf/5.jfif',
+      thumbnailImageSrc: '../../../assets/pics/oncf/5.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/oncf/6.jfif',
+      thumbnailImageSrc: '../../../assets/pics/oncf/6.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/oncf/7.jfif',
+      thumbnailImageSrc: '../../../assets/pics/oncf/7.jfif',
+    },    {
+      itemImageSrc: '../../../assets/pics/oncf/8.jfif',
+      thumbnailImageSrc: '../../../assets/pics/oncf/8.jfif',
+    },    {
+      itemImageSrc: '../../../assets/pics/oncf/9.jfif',
+      thumbnailImageSrc: '../../../assets/pics/oncf/9.jfif',
+    },
+  ]
+  career:any[] | undefined = [
+    {
+      itemImageSrc: '../../../assets/pics/career/1.jfif',
+      thumbnailImageSrc: '../../../assets/pics/career/1.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/career/2.jfif',
+      thumbnailImageSrc: '../../../assets/pics/career/2.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/career/3.jfif',
+      thumbnailImageSrc: '../../../assets/pics/career/3.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/career/4.jfif',
+      thumbnailImageSrc: '../../../assets/pics/career/4.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/career/5.jfif',
+      thumbnailImageSrc: '../../../assets/pics/career/5.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/career/6.jfif',
+      thumbnailImageSrc: '../../../assets/pics/career/6.jfif',
+    },
+    {
+      itemImageSrc: '../../../assets/pics/career/7.jfif',
+      thumbnailImageSrc: '../../../assets/pics/career/7.jfif',
+    },    {
+      itemImageSrc: '../../../assets/pics/career/8.jfif',
+      thumbnailImageSrc: '../../../assets/pics/career/8.jfif',
+    },    {
+      itemImageSrc: '../../../assets/pics/career/9.jfif',
+      thumbnailImageSrc: '../../../assets/pics/career/9.jfif',
+    },
+    ,    {
+      itemImageSrc: '../../../assets/pics/career/10.jfif',
+      thumbnailImageSrc: '../../../assets/pics/career/10.jfif',
+    },
+    ,    {
+      itemImageSrc: '../../../assets/pics/career/11.jfif',
+      thumbnailImageSrc: '../../../assets/pics/career/11.jfif',
+    },
+  ]
+
+  jit:any[] | undefined = []
+  learning:any[] | undefined = []
+
+  images: any[] | undefined 
   showThumbnails: boolean | undefined;
   fullscreen: boolean = false;
   activeIndex: number = 0;
