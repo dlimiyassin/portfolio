@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
+import { GalleriaModule } from 'primeng/galleria';
 import { ProjectViewComponent } from './Content/project-view/project-view.component';
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProjectViewComponent } from './Content/project-view/project-view.compon
     BrowserAnimationsModule,
     TagModule,
     ButtonModule,
-    CarouselModule
+    CarouselModule,
+    GalleriaModule
   ],
   providers: [
     provideClientHydration()

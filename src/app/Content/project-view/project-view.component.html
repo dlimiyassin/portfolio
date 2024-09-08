@@ -1,1 +1,111 @@
-<p>project-view works!</p>
+<div>
+    <div class="flex flex-row justify-between">
+        <div class="hidden lg:inline-block relative">
+            <p class="title-1 z-10">{{projectName}}</p>
+            <div class="dots-pattern"></div>
+        </div>
+        <div>
+            <p>return</p>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="card mb-10">
+        <p-galleria
+            #galleria
+            [value]="images"
+            [(activeIndex)]="activeIndex"
+            [numVisible]="5"
+            [showThumbnails]="showThumbnails"
+            [showItemNavigators]="true"
+            [showItemNavigatorsOnHover]="true"
+            [circular]="true"
+            [autoPlay]="true"
+            [transitionInterval]="3000"
+            [containerStyle]="{ 'max-width': '100%', }"
+            [containerClass]="galleriaClass()"
+        >
+            <ng-template pTemplate="item" let-item>
+                <img 
+                    [src]="item.itemImageSrc" 
+                    [ngStyle]="{ width: !fullscreen ? '100%' : '', display: !fullscreen ? 'block' : '' }" />
+            </ng-template>
+            <ng-template pTemplate="thumbnail" let-item>
+                <div class="grid grid-nogutter justify-content-center">
+                    <img [src]="item.thumbnailImageSrc" />
+                </div>
+            </ng-template>
+            <ng-template pTemplate="footer" let-item>
+                <div class="custom-galleria-footer">
+                    <button type="button" pButton icon="pi pi-list" (click)="onThumbnailButtonClick()">
+                    </button>
+                    <span *ngIf="images" class="title-container">
+                        <span>{{ activeIndex + 1 }}/{{ images.length }}</span>
+                    </span>
+                    <button type="button" pButton [icon]="fullScreenIcon()" (click)="toggleFullScreen()" class="fullscreen-button">
+                    </button>
+                </div>
+            </ng-template>
+        </p-galleria>
+    </div>
+
+
+    <div class="flex flex-col lg:justify-between lg:flex-row mb-10">   
+
+        <div class="lg:w-[45%] mb-10 lg:mb-0 text-xs lg:text-[15px] space-y-1 lg:space-y-4 lg:mt-1 bg-color-gray p-3 rounded-md">
+            <div class="flex flex-row items-center">
+                <div class="w-16">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#40a2d8" fill="none">
+                        <path d="M18 2V4M6 2V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M11.9955 13H12.0045M11.9955 17H12.0045M15.991 13H16M8 13H8.00897M8 17H8.00897" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3.5 8H20.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2.5 12.2432C2.5 7.88594 2.5 5.70728 3.75212 4.35364C5.00424 3 7.01949 3 11.05 3H12.95C16.9805 3 18.9958 3 20.2479 4.35364C21.5 5.70728 21.5 7.88594 21.5 12.2432V12.7568C21.5 17.1141 21.5 19.2927 20.2479 20.6464C18.9958 22 16.9805 22 12.95 22H11.05C7.01949 22 5.00424 22 3.75212 20.6464C2.5 19.2927 2.5 17.1141 2.5 12.7568V12.2432Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3 8H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <span>10-10-2023</span>
+            </div>
+            <div class="flex flex-row items-center">
+                <div class="w-16">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#40a2d8" fill="none">
+                        <path d="M12 2H6C3.518 2 3 2.518 3 5V22H15V5C15 2.518 14.482 2 12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                        <path d="M18 8H15V22H21V11C21 8.518 20.482 8 18 8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                        <path d="M8 6L10 6M8 9L10 9M8 12L10 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M11.5 22V18C11.5 17.0572 11.5 16.5858 11.2071 16.2929C10.9142 16 10.4428 16 9.5 16H8.5C7.55719 16 7.08579 16 6.79289 16.2929C6.5 16.5858 6.5 17.0572 6.5 18V22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <span>For UIR</span>
+            </div>
+            <div class="flex flex-row items-center">
+                <div class="w-16">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#40a2d8" fill="none">
+                        <path d="M8.56854 12L7.71068 11.1421C6.76311 10.1946 6.76311 8.65825 7.71068 7.71068C8.65825 6.76311 10.1946 6.76311 11.1421 7.71068L16.2893 12.8579C17.2369 13.8054 17.2369 15.3418 16.2893 16.2893C15.3418 17.2369 13.8054 17.2369 12.8579 16.2893L10.9277 14.3591C9.51688 12.9483 11.5463 11.0463 13 12.5L14 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                </div>
+                <span>link</span>
+            </div>
+        </div>
+
+        <div class="lg:w-[45%] bg-color-gray p-3 rounded-md">description</div>
+
+    </div>
+
+
+    <div class="inline-block relative mb-7">
+        <p class="title-2 mt-10 z-10">Thechnologies</p>
+        <div class="dots-pattern-t2"></div>
+    </div>
+
+    <div class="flex flex-row space-x-2 text-xs">
+        <div class="bg-color-gray py-1 px-2 rounded-lg ">
+            Spring booot
+        </div>
+        <div class="bg-color-gray p-1 rounded ">
+            Angular
+        </div>
+    </div>
+</div>

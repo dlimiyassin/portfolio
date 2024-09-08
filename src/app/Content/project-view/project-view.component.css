@@ -1,0 +1,115 @@
+.relative {
+    position: relative; /* Ensure that the parent container is positioned */
+}
+
+.dots-pattern {
+    position: absolute; /* Ensure the dots are positioned absolutely within the relative container */
+    bottom: 25px; /* Ajuster pour que ce soit sous le texte */
+    right: -30px; /* Adjust alignment to the right */
+    width: 48px; /* 8 dots * 6px size */
+    height: 24px; /* 4 dots * 6px size */
+    background-image: radial-gradient(circle, #40A2D8 1px, transparent 1px);
+    background-size: 6px 6px; /* Dot size with spacing */
+    opacity: 65%;
+    z-index: 0; /* Behind the text */
+}
+
+.title-1 {
+    position: relative; /* Ensure the text has a stacking context */
+    z-index: 10; /* Ensure the text is in front of the dots */
+}
+
+
+
+
+
+
+
+
+:host ::ng-deep {
+            .custom-galleria {
+                &.p-galleria {
+                    &.fullscreen {
+                        display: flex;
+                        flex-direction: column;
+            
+                        .p-galleria-content {
+                            flex-grow: 1;
+                            justify-content: center;
+                        }
+                    }
+            
+                    .p-galleria-content {
+                        position: relative;
+                    }
+            
+                    .p-galleria-thumbnail-wrapper {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                    }
+            
+                    .p-galleria-thumbnail-items-container {
+                        width: 100%;
+                    }
+            
+                    .custom-galleria-footer {
+                        display: flex;
+                        align-items: center;
+                        background-color: rgba(0, 0, 0, .9);
+                        color: #ffffff;
+            
+                        > button {
+                            background-color: transparent;
+                            color: #ffffff;
+                            border: 0 none;
+                            border-radius: 0;
+                            margin: .2rem 0;
+            
+                            &.fullscreen-button {
+                                margin-left: auto;
+                            }
+            
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.1);
+                            }
+                        }
+                    }
+            
+                    .title-container {
+                        > span {
+                            font-size: .9rem;
+                            padding-left: .829rem;
+            
+                            &.title {
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+
+        .title-2 {
+            position: relative; 
+            z-index: 10; 
+        }
+        
+        .dots-pattern-t2 {
+            position: absolute; /* Ensure the dots are positioned absolutely within the relative container */
+            bottom: 0px; /* Ajuster pour que ce soit sous le texte */
+            right: -20px; /* Adjust alignment to the right */
+            width: 36px; /* 8 dots * 6px size */
+            height: 18px; /* 4 dots * 6px size */
+            background-image: radial-gradient(circle, #40A2D8 1px, transparent 1px);
+            background-size: 6px 6px; /* Dot size with spacing */
+            opacity: 65%;
+            z-index: 0; /* Behind the text */
+        }

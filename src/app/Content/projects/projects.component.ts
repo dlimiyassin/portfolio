@@ -10,16 +10,16 @@ export class ProjectsComponent {
 
   projects: any[] = [
     {
-      name:'uir-shop',
+      name:'Uir-Shop',
       description : 'E-commerce platform',
       img : '../../../assets/pics/uir-shop.jfif'
     },
     {
-      name:'oncf',
+      name:'Oncf',
       description : 'Employee management platform',
       img : '../../../assets/pics/oncf.jfif'
     },    {
-      name:'career-hub',
+      name:'Career-Hub',
       description : 'Recretument platform',
       img : '../../../assets/pics/career-hub.jfif'
     }
