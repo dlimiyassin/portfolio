@@ -260,7 +260,12 @@ career: Project = {
 
   learning : Project = {
     title : 'E-Learning',
-    description : 'This is an online learning platform, E-Learning, made up of three distinct users: Admin: is dedicated to managing user accounts and course modules. Teacher: can download courses as well as create and manage exams. Student: has the ability to view available courses and take exams corresponding to their level.',
+    description: `This is an online learning platform, E-Learning, made up of three distinct users:<br>
+                  <ul>
+                    <li><strong>Admin:</strong> is dedicated to managing user accounts and course modules.</li>
+                    <li><strong>Teacher:</strong> can download courses as well as create and manage exams.</li>
+                    <li><strong>Student:</strong> has the ability to view available courses and take exams corresponding to their level.</li>
+                  </ul>`,
     link : 'https://github.com/dlimiyassin/Elearning',
     client: 'Graduation Project',
     date : '15-03-2022',

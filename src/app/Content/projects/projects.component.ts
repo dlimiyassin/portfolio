@@ -18,10 +18,11 @@ export class ProjectsComponent {
       name:'Oncf',
       description : 'Employee management platform',
       img : 'assets/pics/oncf/1.jfif'
-    },    {
-      name:'Career-Hub',
-      description : 'Recretument platform',
-      img : 'assets/pics/career/1.jfif'
+    },
+    {
+      name:'Jit-Pilote',
+      description : ' project management tool',
+      img : 'assets/pics/jit/1.jpg'
     },
     {
       name:'E-Learning',
@@ -29,11 +30,10 @@ export class ProjectsComponent {
       img : 'assets/pics/learning/1.png'
     },
     {
-      name:'Jit-Pilote',
-      description : ' project management tool',
-      img : 'assets/pics/jit/1.jpg'
-    }
-
+      name:'Career-Hub',
+      description : 'Recretument platform',
+      img : 'assets/pics/career/1.jfif'
+    },
   ];
 
   
