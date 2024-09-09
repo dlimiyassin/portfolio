@@ -22,6 +22,16 @@ export class ProjectsComponent {
       name:'Career-Hub',
       description : 'Recretument platform',
       img : 'assets/pics/career/1.jfif'
+    },
+    {
+      name:'E-Learning',
+      description : 'E-Learning platform',
+      img : 'assets/pics/learning/1.png'
+    },
+    {
+      name:'Jit-Pilote',
+      description : ' project management tool',
+      img : 'assets/pics/jit/1.jpg'
     }
 
   ];

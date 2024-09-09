@@ -174,8 +174,164 @@ career: Project = {
   ]
 }
 
-  jit!: Project
-  learning!: Project
+
+
+  jit : Project =  {
+    title : 'Jit-Pilote',
+    description : 'Jit-Pilote is a project management tool that implements the Scrum framework to manage IT projects.',
+    link : 'https://jitpilote.jobintech.net/',
+    client: 'JobInTech',
+    date : '04-07-2024',
+    images : [
+      {
+        itemImageSrc: 'assets/pics/jit/1.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/1.jpg',
+      },
+      {
+        itemImageSrc: 'assets/pics/jit/2.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/2.jpg',
+      },
+      {
+        itemImageSrc: 'assets/pics/jit/3.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/3.jpg',
+      },
+      {
+        itemImageSrc: 'assets/pics/jit/4.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/4.jpg',
+      },
+      {
+        itemImageSrc: 'assets/pics/jit/5.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/5.jpg',
+      },
+      {
+        itemImageSrc: 'assets/pics/jit/6.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/6.jpg',
+      },
+      {
+        itemImageSrc: 'assets/pics/jit/7.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/7.jpg',
+      },    {
+        itemImageSrc: 'assets/pics/jit/8.jpeg',
+        thumbnailImageSrc: 'assets/pics/jit/8.jpg',
+      },    {
+        itemImageSrc: 'assets/pics/jit/9.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/9.jpg',
+      },
+      ,    {
+        itemImageSrc: 'assets/pics/jit/10.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/10.jpg',
+      },
+      ,    {
+        itemImageSrc: 'assets/pics/jit/11.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/11.jpg',
+      },
+      {
+        itemImageSrc: 'assets/pics/jit/12.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/12.jpg',
+      },
+      {
+        itemImageSrc: 'assets/pics/jit/13.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/13.jpg',
+      },    {
+        itemImageSrc: 'assets/pics/jit/14.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/14.jpg',
+      },    {
+        itemImageSrc: 'assets/pics/jit/15.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/15.jpg',
+      },
+      ,    {
+        itemImageSrc: 'assets/pics/jit/16.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/16.jpg',
+      },
+      {
+        itemImageSrc: 'assets/pics/jit/30.jpg',
+        thumbnailImageSrc: 'assets/pics/jit/30.jpg',
+      },
+    ],
+    technologies :  [
+      'Spring Boot',
+      'Angular',
+      'Tailwind CSS'
+    ]
+  }
+
+
+
+
+  learning : Project = {
+    title : 'E-Learning',
+    description : 'This is an online learning platform, E-Learning, made up of three distinct users: Admin: is dedicated to managing user accounts and course modules. Teacher: can download courses as well as create and manage exams. Student: has the ability to view available courses and take exams corresponding to their level.',
+    link : 'https://github.com/dlimiyassin/Elearning',
+    client: 'Graduation Project',
+    date : '15-03-2022',
+    images : [
+      {
+        itemImageSrc: 'assets/pics/learning/1.png',
+        thumbnailImageSrc: 'assets/pics/learning/1.png',
+      },
+      {
+        itemImageSrc: 'assets/pics/learning/2.png',
+        thumbnailImageSrc: 'assets/pics/learning/2.png',
+      },
+      {
+        itemImageSrc: 'assets/pics/learning/3.png',
+        thumbnailImageSrc: 'assets/pics/learning/3.png',
+      },
+      {
+        itemImageSrc: 'assets/pics/learning/4.png',
+        thumbnailImageSrc: 'assets/pics/learning/4.png',
+      },
+      {
+        itemImageSrc: 'assets/pics/learning/5.jpg',
+        thumbnailImageSrc: 'assets/pics/learning/5.jpg',
+      },
+      {
+        itemImageSrc: 'assets/pics/learning/6.png',
+        thumbnailImageSrc: 'assets/pics/learning/6.png',
+      },
+      {
+        itemImageSrc: 'assets/pics/learning/7.png',
+        thumbnailImageSrc: 'assets/pics/learning/7.png',
+      },    {
+        itemImageSrc: 'assets/pics/learning/8.jpeg',
+        thumbnailImageSrc: 'assets/pics/learning/8.jpeg',
+      },    {
+        itemImageSrc: 'assets/pics/learning/9.jpg',
+        thumbnailImageSrc: 'assets/pics/learning/9.jpg',
+      },
+      ,    {
+        itemImageSrc: 'assets/pics/learning/10.jpg',
+        thumbnailImageSrc: 'assets/pics/learning/10.jpg',
+      },
+      ,    {
+        itemImageSrc: 'assets/pics/learning/11.jpg',
+        thumbnailImageSrc: 'assets/pics/learning/11.jpg',
+      },
+      {
+        itemImageSrc: 'assets/pics/learning/12.jpg',
+        thumbnailImageSrc: 'assets/pics/learning/12.jpg',
+      },
+      {
+        itemImageSrc: 'assets/pics/learning/13.jpg',
+        thumbnailImageSrc: 'assets/pics/learning/13.jpg',
+      },    {
+        itemImageSrc: 'assets/pics/learning/14.jpg',
+        thumbnailImageSrc: 'assets/pics/learning/14.jpg',
+      },    {
+        itemImageSrc: 'assets/pics/learning/15.jpg',
+        thumbnailImageSrc: 'assets/pics/learning/15.jpg',
+      },
+      ,    {
+        itemImageSrc: 'assets/pics/learning/16.jpg',
+        thumbnailImageSrc: 'assets/pics/learning/16.jpg',
+      },
+    ],
+    technologies :  [
+      'Spring Boot',
+      'Angular',
+      'Bootstrap'
+    ]
+  }
 
   showThumbnails: boolean | undefined;
   fullscreen: boolean = false;
