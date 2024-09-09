@@ -211,7 +211,7 @@ career: Project = {
         itemImageSrc: 'assets/pics/jit/7.jpg',
         thumbnailImageSrc: 'assets/pics/jit/7.jpg',
       },    {
-        itemImageSrc: 'assets/pics/jit/8.jpeg',
+        itemImageSrc: 'assets/pics/jit/8.jpg',
         thumbnailImageSrc: 'assets/pics/jit/8.jpg',
       },    {
         itemImageSrc: 'assets/pics/jit/9.jpg',
@@ -282,8 +282,8 @@ career: Project = {
         thumbnailImageSrc: 'assets/pics/learning/4.png',
       },
       {
-        itemImageSrc: 'assets/pics/learning/5.jpg',
-        thumbnailImageSrc: 'assets/pics/learning/5.jpg',
+        itemImageSrc: 'assets/pics/learning/5.jpeg',
+        thumbnailImageSrc: 'assets/pics/learning/5.jpeg',
       },
       {
         itemImageSrc: 'assets/pics/learning/6.png',
