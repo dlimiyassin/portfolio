@@ -8,22 +8,10 @@ import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angu
 export class ResumeComponent {
   animate = false;
 
-  
-  @ViewChildren('progressBars') progressBars!: QueryList<ElementRef>;
-  
   ngAfterViewInit(): void {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.animate = true;
-          this.progressBars.forEach((bar) => {
-            bar.nativeElement.classList.add('animate-progress');
-          });
-        }
-      });
-    });
-
-    this.progressBars.forEach(bar => observer.observe(bar.nativeElement));
+    setTimeout(() => {
+      this.animate = true;
+    }, 0);
   }
   langauges: Skill[] = [
     { title: "Java", progress: 80 },
