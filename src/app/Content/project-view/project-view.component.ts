@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit, OnDestroy, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
 import { Galleria } from 'primeng/galleria';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { title } from 'process';
 
 @Component({
@@ -9,8 +9,9 @@ import { title } from 'process';
   styleUrls: ['./project-view.component.css']
 })
 export class ProjectViewComponent implements OnInit, OnDestroy {
-
-  constructor(@Inject(PLATFORM_ID) private platformId: any, private route: ActivatedRoute, private cd: ChangeDetectorRef) {}
+  projects = ['Uir-Shop', 'Oncf', 'Career-Hub', 'E-Learning', 'Jit-Pilote'];
+  currentProjectIndex = 0;
+  constructor(@Inject(PLATFORM_ID) private platformId: any, private route: ActivatedRoute, private cd: ChangeDetectorRef,private router: Router) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -19,16 +20,53 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
     this.bindDocumentListeners();
     
   }
+
+  
   snycProject(projectName : string | null){
     switch(projectName){
-      case 'Uir-Shop' : this.project = this.uir; break;
-      case 'Oncf' : this.project = this.oncf; break;
-      case 'Career-Hub' : this.project = this.career; break;
-      case 'E-Learning' : this.project = this.learning; break;
-      case 'Jit-Pilote' : this.project = this.jit; break;
-      default : this.project = this.uir; break;
+      case 'Uir-Shop' : this.project = this.uir; this.currentProjectIndex = 0; break;
+      case 'Oncf' : this.project = this.oncf; this.currentProjectIndex = 1; break;
+      case 'Career-Hub' : this.project = this.career; this.currentProjectIndex = 2; break;
+      case 'E-Learning' : this.project = this.learning; this.currentProjectIndex = 3; break;
+      case 'Jit-Pilote' : this.project = this.jit; this.currentProjectIndex = 4; break;
+      default : this.project = this.uir;this.currentProjectIndex=0; break;
     }
+
   }
+
+
+  navigateProject(direction: 'prev' | 'next'): void {
+    if (direction === 'prev' && this.currentProjectIndex > 0) {
+      this.currentProjectIndex--;
+    } else if (direction === 'next' && this.currentProjectIndex < this.projects.length - 1) {
+      this.currentProjectIndex++;
+    }
+    const nextProject = this.projects[this.currentProjectIndex];
+    this.activeIndex=0
+    this.router.navigate([`/project/${nextProject}`]);
+    this.snycProject(nextProject) ;
+    this.bindDocumentListeners();
+    
+  }
+
+  closeProject(): void {
+    // Logic to handle the close action
+    this.router.navigate(['/projects']);
+    
+  }
+    
+    // Method to reset the Galleria images and index
+    resetGalleria() {
+      this.activeIndex = 0;
+      if (this.project) {
+        this.project.images = []; // Reset the images
+      }
+    }
+  
+    ngOnDestroy() {
+      this.unbindDocumentListeners();
+      
+    }
 
   project : Project | undefined;
 
@@ -403,9 +441,7 @@ career: Project = {
     this.onFullScreenListener = null;
   }
 
-  ngOnDestroy() {
-    this.unbindDocumentListeners();
-  }
+
 
   galleriaClass() {
     return `custom-galleria ${this.fullscreen ? 'fullscreen' : ''}`;

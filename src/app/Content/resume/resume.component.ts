@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-resume',
@@ -8,12 +8,23 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class ResumeComponent {
   animate = false;
 
+  
+  @ViewChildren('progressBars') progressBars!: QueryList<ElementRef>;
+  
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.animate = true;
-    }, 0);
-  }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.animate = true;
+          this.progressBars.forEach((bar) => {
+            bar.nativeElement.classList.add('animate-progress');
+          });
+        }
+      });
+    });
 
+    this.progressBars.forEach(bar => observer.observe(bar.nativeElement));
+  }
   langauges: Skill[] = [
     { title: "Java", progress: 80 },
     { title: "TypeScript", progress: 70 },

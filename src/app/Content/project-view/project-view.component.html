@@ -4,9 +4,13 @@
             <p class="title-1 z-10">{{project?.title}}</p>
             <div class="dots-pattern"></div>
         </div>
-        <div>
-            <p></p>
-        </div>
+
+        <div class="navigation-buttons hidden lg:block">
+            <button pButton icon="pi pi-chevron-left" class="bg-color-blue text-color-gray me-1" (click)="navigateProject('prev')" [disabled]="currentProjectIndex === 0"></button>
+            <button pButton icon="pi pi-chevron-right" class="bg-color-blue text-color-gray me-2" (click)="navigateProject('next')" [disabled]="currentProjectIndex === projects.length - 1"></button>
+            <button pButton icon="pi pi-times" class="bg-color-blue text-color-gray" (click)="closeProject()"></button>
+        </div>            
+
     </div>
 
 
@@ -105,5 +109,13 @@
             {{skill}}
           </div>
         }
-      </div>      
+      </div>   
+      
+      <div class="navigation-buttons fixed bottom-24 right-1 flex flex-col lg:hidden space-y-2 me-1">
+          <button pButton icon="pi pi-chevron-left" class="bg-color-blue py-2 px-0 text-color-gray" (click)="navigateProject('prev')" [disabled]="currentProjectIndex === 0"></button>
+          <button pButton icon="pi pi-chevron-right" class="bg-color-blue py-2 px-0 text-color-gray" (click)="navigateProject('next')" [disabled]="currentProjectIndex === projects.length - 1"></button>
+          <button pButton icon="pi pi-times" class="bg-color-blue py-2 px-0 text-color-gray" (click)="closeProject()"></button>
+      </div>
+      
+         
 </div>

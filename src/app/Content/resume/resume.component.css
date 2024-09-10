@@ -11,6 +11,10 @@
     animation: fillProgress 2s forwards;
   }
   
+  .animate-progress {
+    width: var(--progress-width);
+    transition: width 1.5s ease-in-out;
+  }
   
   
 
