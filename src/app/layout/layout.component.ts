@@ -1,15 +1,16 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { fader, slider, transform } from '../route.animations';
+import { fader, slider, transform, pageFlip } from '../route.animations';
 
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css'],
   animations: [
-    transform, 
+    pageFlip,
+    slider,
     fader, 
-    slider
+    transform, 
   ],
 })
 export class LayoutComponent {
