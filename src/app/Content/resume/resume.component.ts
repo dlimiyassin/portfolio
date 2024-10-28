@@ -21,7 +21,7 @@ export class ResumeComponent {
 
   scrollToTop(): void {
     if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' }); //te
     }
   }
 
