@@ -32,7 +32,7 @@ export class ResumeComponent {
       title : "Spring boot - Angular certification",
       year : "2023-2024",
       school : "International University of Rabat."
-    },    
+    },
     {
       title : "Bachelor’s degree in computer science",
       year : "2019-2023",
@@ -48,12 +48,19 @@ export class ResumeComponent {
 
   experiances : Experiance[] = [
     {
+      post : "Freelance Java Angular",
+      starting_date : "Present",
+      ending_date: "Oct, 2024",
+      comapny : "UpWork",
+      description: "Developing and debugging backend APIs and Angular applications, resolving customer-reported issues, and actively participating in customer meetings to discuss progress and address concerns."
+    },
+    {
       post : "fullstack Java Angular",
       starting_date : "Aug, 2024",
       ending_date: "Mars, 2024",
       comapny : "JobInTech",
       description: "I create applications from scratch, ensure project maintenance, and develop responsive user interfaces for an optimal experience across all devices"
-    },    
+    },
     {
       post : "fullstack Java Angular",
       starting_date : "Feb, 2024",
@@ -85,7 +92,7 @@ export class ResumeComponent {
     {
       title: "SQL",
       progress : 80
-    },    
+    },
     {
       title: "SQL SERVER",
       progress : 50
