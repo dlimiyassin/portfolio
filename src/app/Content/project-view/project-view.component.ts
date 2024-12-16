@@ -18,10 +18,10 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
       this.snycProject(params.get('name')) ;
     });
     this.bindDocumentListeners();
-    
+
   }
 
-  
+
   snycProject(projectName : string | null){
     switch(projectName){
       case 'Uir-Shop' : this.project = this.uir; this.currentProjectIndex = 0; break;
@@ -46,15 +46,15 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
     this.router.navigate([`/project/${nextProject}`]);
     this.snycProject(nextProject) ;
     this.bindDocumentListeners();
-    
+
   }
 
   closeProject(): void {
     // Logic to handle the close action
     this.router.navigate(['/projects']);
-    
+
   }
-    
+
     // Method to reset the Galleria images and index
     resetGalleria() {
       this.activeIndex = 0;
@@ -62,10 +62,10 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
         this.project.images = []; // Reset the images
       }
     }
-  
+
     ngOnDestroy() {
       this.unbindDocumentListeners();
-      
+
     }
 
   project : Project | undefined;
@@ -73,7 +73,7 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
   uir: Project = {
       title : 'Uir-Shop',
       description : 'UIR-SHOP is an e-commerce platform',
-      link : 'https://uirshop.jobintech.net/',
+      link : 'http://156.67.81.207:8889/',
       client: 'for International University of Rabat',
       date : '15-06-2024',
       images : [
@@ -140,18 +140,18 @@ oncf: Project = {
     },
   ],
   technologies :  [
-    "Spring Boot", 
-    "Spring Security & JWT", 
-    "Vérification par e-mail", 
-    "Swagger", 
-    "AWS EB", 
+    "Spring Boot",
+    "Spring Security & JWT",
+    "Vérification par e-mail",
+    "Swagger",
+    "AWS EB",
     "S3",
-    "Angular", 
-    "rxjs", 
-    "Guards", 
-    "Interceptors", 
-    "Validation", 
-    "ngx", 
+    "Angular",
+    "rxjs",
+    "Guards",
+    "Interceptors",
+    "Validation",
+    "ngx",
     "Bootstrap"
   ]
 }
