@@ -9,10 +9,16 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
 
+  animateSections = false;
+
   constructor(private router : Router){}
+
   ngOnInit(): void {
     this.adjustPageSize();
     this.scrollToTop();
+    setTimeout(() => {
+      this.animateSections = true;
+    }, 100); // delay to allow initial render
   }
 
   scrollToTop(): void {

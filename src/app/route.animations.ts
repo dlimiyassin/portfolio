@@ -80,7 +80,6 @@ export const transform = trigger('routeAnimations', [
 
 
 
-
 function slideTo(direction: string): AnimationMetadata[] {
     const offset = direction === 'left' ? '-100%' : '100%';
     return [
@@ -113,17 +112,6 @@ function slideTo(direction: string): AnimationMetadata[] {
         ])
     ];
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
