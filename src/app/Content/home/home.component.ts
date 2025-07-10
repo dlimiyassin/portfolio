@@ -10,27 +10,32 @@ import { Router } from '@angular/router';
 export class HomeComponent {
 
   animateSections = false;
+  pageLoaded : boolean = false;
 
   constructor(private router : Router){}
 
   ngOnInit(): void {
     this.adjustPageSize();
     this.scrollToTop();
-
-
-    if (document.readyState === 'complete') {
-      console.log("kayn");
-          setTimeout(() => {
+    this.pageLoaded = true
+      setTimeout(() => {
       this.animateSections = true;
-    }, 100);
-    } else {
+    }, 200);
+  }
+
+
+    ngAfterViewInit(): void {
+    // Wait for full window load (all assets loaded)
     window.addEventListener('load', () => {
-    console.log(true);
-        setTimeout(() => {
+      this.pageLoaded = true
+      setTimeout(() => {
       this.animateSections = true;
-    }, 100);
+    }, 200);
     });
-}
+  }
+
+  enableAnimation(){
+    
   }
 
   scrollToTop(): void {
