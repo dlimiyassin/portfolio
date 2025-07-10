@@ -7,35 +7,6 @@ import { Router } from '@angular/router';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
-
-  // projects: any[] = [
-  //   {
-  //     name:'Uir-Shop',
-  //     description : 'E-commerce platform',
-  //     img : 'assets/pics/uir/1.jfif'
-  //   },
-  //   {
-  //     name:'Oncf',
-  //     description : 'Employee management platform',
-  //     img : 'assets/pics/oncf/1.jfif'
-  //   },
-  //   {
-  //     name:'Jit-Pilote',
-  //     description : ' project management tool',
-  //     img : 'assets/pics/jit/1.jpg'
-  //   },
-  //   {
-  //     name:'E-Learning',
-  //     description : 'E-Learning platform',
-  //     img : 'assets/pics/learning/1.png'
-  //   },
-  //   {
-  //     name:'Career-Hub',
-  //     description : 'Recretument platform',
-  //     img : 'assets/pics/career/1.jfif'
-  //   },
-  // ];
-
   
   isSmallScreen: boolean = false;
 
@@ -85,46 +56,54 @@ export class ProjectsComponent {
 
   projects : Project[] = [
     {
+    name : 'Atlas-Service',
     title : "Atlas Service",
     description: "Fulfillment CRM for arrivals & orders management.",
     img: "assets/pics/logos/atlas-logo.png"
     },
     {
-    title : "UIR Shop",
-    description: "E-Commerce Platform for UIR students.",
-    img: "assets/pics/logos/uir-logo.png"
-    },
-    {
+    name : 'Jit-Pilote',
     title : "JIT Pilote",
     description: "Project management tool using Agile framewokrs.",
     img: "assets/pics/logos/jit-logo.png"
     },
     {
-      title:'Oncf',
-      description : 'Employee management platform',
-      img : 'assets/pics/oncf/1.jfif'
+    name : 'Uir-Shop',
+    title : "UIR Shop",
+    description: "E-Commerce Platform for UIR students.",
+    img: "assets/pics/logos/uir-logo.png"
     },
     {
+      name : 'E-Learning',
       title:'E-Learning',
       description : 'E-Learning platform',
-      img : 'assets/pics/learning/1.png'
+      img : 'assets/pics/logos/elearning-logo.png'
     },
     {
+      name : 'Oncf',
+      title:'Oncf',
+      description : 'Employee management platform',
+      img : 'assets/pics/logos/oncf-logo.jfif'
+    },
+    {
+      name : 'Career-Hub',
       title:'Career-Hub',
       description : 'Recretument platform',
-      img : 'assets/pics/career/1.jfif'
+      img : 'assets/pics/logos/career-logo.jfif'
     },
 ]
 }
 
 
 class Project {
+  name: string;
   title : string;
   description : string;
   img: string;
 
 
-  constructor(title :string, desc : string, img: string) {
+  constructor(name: string, title :string, desc : string, img: string) {
+    this.name= name
     this.title = title
     this.description = desc
     this.img = img

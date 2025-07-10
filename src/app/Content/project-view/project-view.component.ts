@@ -1,53 +1,45 @@
 import { ChangeDetectorRef, Component, OnInit, OnDestroy, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
 import { Galleria } from 'primeng/galleria';
 import { ActivatedRoute, Router } from '@angular/router';
-import { title } from 'process';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-project-view',
   templateUrl: './project-view.component.html',
   styleUrls: ['./project-view.component.css']
 })
-export class ProjectViewComponent implements OnInit, OnDestroy {
-  projects = ['Uir-Shop', 'Oncf', 'Career-Hub', 'E-Learning', 'Jit-Pilote'];
+export class ProjectViewComponent implements OnInit {
+
+  projects = ['Uir-Shop', 'Oncf', 'Career-Hub', 'E-Learning', 'Jit-Pilote', 'Atlas-Service'];
   currentProjectIndex = 0;
-  constructor(@Inject(PLATFORM_ID) private platformId: any, private route: ActivatedRoute, private cd: ChangeDetectorRef,private router: Router) {}
+  constructor(private route: ActivatedRoute, private cd: ChangeDetectorRef,private router: Router, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.snycProject(params.get('name')) ;
     });
-    this.bindDocumentListeners();
 
   }
 
-
-  snycProject(projectName : string | null){
-    switch(projectName){
-      case 'Uir-Shop' : this.project = this.uir; this.currentProjectIndex = 0; break;
-      case 'Oncf' : this.project = this.oncf; this.currentProjectIndex = 1; break;
-      case 'Career-Hub' : this.project = this.career; this.currentProjectIndex = 2; break;
-      case 'E-Learning' : this.project = this.learning; this.currentProjectIndex = 3; break;
-      case 'Jit-Pilote' : this.project = this.jit; this.currentProjectIndex = 4; break;
-      default : this.project = this.uir;this.currentProjectIndex=0; break;
-    }
-
+snycProject(projectName: string | null) {
+  switch(projectName) {
+    case 'Uir-Shop': this.project = this.uir; break;
+    case 'Oncf': this.project = this.oncf; break;
+    case 'Career-Hub': this.project = this.career; break;
+    case 'E-Learning': this.project = this.learning; break;
+    case 'Jit-Pilote': this.project = this.jit; break;
+    case 'Atlas-Service': this.project = this.atlas; break;
+    default: this.project = this.atlas; break;
   }
 
-
-  navigateProject(direction: 'prev' | 'next'): void {
-    if (direction === 'prev' && this.currentProjectIndex > 0) {
-      this.currentProjectIndex--;
-    } else if (direction === 'next' && this.currentProjectIndex < this.projects.length - 1) {
-      this.currentProjectIndex++;
-    }
-    const nextProject = this.projects[this.currentProjectIndex];
-    this.activeIndex=0
-    this.router.navigate([`/project/${nextProject}`]);
-    this.snycProject(nextProject) ;
-    this.bindDocumentListeners();
-
+  if (this.project.videoUrl) {
+    this.project.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.project.videoUrl as string);
   }
+}
+
+
+
 
   closeProject(): void {
     // Logic to handle the close action
@@ -55,18 +47,7 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
 
   }
 
-    // Method to reset the Galleria images and index
-    resetGalleria() {
-      this.activeIndex = 0;
-      if (this.project) {
-        this.project.images = []; // Reset the images
-      }
-    }
 
-    ngOnDestroy() {
-      this.unbindDocumentListeners();
-
-    }
 
   project : Project | undefined;
 
@@ -76,69 +57,21 @@ export class ProjectViewComponent implements OnInit, OnDestroy {
       link : 'http://156.67.81.207:8889/',
       client: 'for International University of Rabat',
       date : '15-06-2024',
-      images : [
-        {
-          itemImageSrc: 'assets/pics/uir/1.jfif',
-          thumbnailImageSrc: 'assets/pics/uir/1.jfif',
-        },
-        {
-          itemImageSrc: 'assets/pics/uir/2.jfif',
-          thumbnailImageSrc: 'assets/pics/uir/2.jfif',
-        },
-        {
-          itemImageSrc: 'assets/pics/uir/3.jfif',
-          thumbnailImageSrc: 'assets/pics/uir/3.jfif',
-        },
-      ],
+      videoUrl : 'assets/pics/demos/uir-shop-demo.mp4',
       technologies :  [
         'Spring Boot',
         'Angular',
         'Tailwind CSS'
       ]
-}
+  }
 
-oncf: Project = {
+  oncf: Project = {
   title : 'Oncf',
   description : 'The main objective is to facilitate the management of employees of a company, by offering them the possibility of taking exams in order to assess their professional progress within the organization.',
   link : 'https://github.com/dlimiyassin/oncf',
   client: 'Training Edge Consulting',
   date : '30-10-2023',
-  images : [
-    {
-      itemImageSrc: 'assets/pics/oncf/1.jfif',
-      thumbnailImageSrc: 'assets/pics/oncf/1.jfif',
-    },
-    {
-      itemImageSrc: 'assets/pics/oncf/2.jfif',
-      thumbnailImageSrc: 'assets/pics/oncf/2.jfif',
-    },
-    {
-      itemImageSrc: 'assets/pics/oncf/3.jfif',
-      thumbnailImageSrc: 'assets/pics/oncf/3.jfif',
-    },
-    {
-      itemImageSrc: 'assets/pics/oncf/4.jfif',
-      thumbnailImageSrc: 'assets/pics/oncf/4.jfif',
-    },
-    {
-      itemImageSrc: 'assets/pics/oncf/5.jfif',
-      thumbnailImageSrc: 'assets/pics/oncf/5.jfif',
-    },
-    {
-      itemImageSrc: 'assets/pics/oncf/6.jfif',
-      thumbnailImageSrc: 'assets/pics/oncf/6.jfif',
-    },
-    {
-      itemImageSrc: 'assets/pics/oncf/7.jfif',
-      thumbnailImageSrc: 'assets/pics/oncf/7.jfif',
-    },    {
-      itemImageSrc: 'assets/pics/oncf/8.jfif',
-      thumbnailImageSrc: 'assets/pics/oncf/8.jfif',
-    },    {
-      itemImageSrc: 'assets/pics/oncf/9.jfif',
-      thumbnailImageSrc: 'assets/pics/oncf/9.jfif',
-    },
-  ],
+  videoUrl : 'assets/pics/demos/uir-shop-demo.mp4',
   technologies :  [
     "Spring Boot",
     "Spring Security & JWT",
@@ -154,65 +87,20 @@ oncf: Project = {
     "ngx",
     "Bootstrap"
   ]
-}
+  }
 
-career: Project = {
+  career: Project = {
   title : 'Career-Hub',
   description : 'This is a recruiting platform that allows recruiters to post jobs and candidates to apply. This platform is developed with Angular and uses json-server as a database.',
   link : 'https://github.com/dlimiyassin/CareerHub',
   client: 'Learning purpose',
   date : '11-05-2024',
-  images : [
-    {
-      itemImageSrc: 'assets/pics/career/1.jfif',
-      thumbnailImageSrc: 'assets/pics/career/1.jfif',
-    },
-    {
-      itemImageSrc: 'assets/pics/career/2.jfif',
-      thumbnailImageSrc: 'assets/pics/career/2.jfif',
-    },
-    {
-      itemImageSrc: 'assets/pics/career/3.jfif',
-      thumbnailImageSrc: 'assets/pics/career/3.jfif',
-    },
-    {
-      itemImageSrc: 'assets/pics/career/4.jfif',
-      thumbnailImageSrc: 'assets/pics/career/4.jfif',
-    },
-    {
-      itemImageSrc: 'assets/pics/career/5.jfif',
-      thumbnailImageSrc: 'assets/pics/career/5.jfif',
-    },
-    {
-      itemImageSrc: 'assets/pics/career/6.jfif',
-      thumbnailImageSrc: 'assets/pics/career/6.jfif',
-    },
-    {
-      itemImageSrc: 'assets/pics/career/7.jfif',
-      thumbnailImageSrc: 'assets/pics/career/7.jfif',
-    },    {
-      itemImageSrc: 'assets/pics/career/8.jfif',
-      thumbnailImageSrc: 'assets/pics/career/8.jfif',
-    },    {
-      itemImageSrc: 'assets/pics/career/9.jfif',
-      thumbnailImageSrc: 'assets/pics/career/9.jfif',
-    },
-    ,    {
-      itemImageSrc: 'assets/pics/career/10.jfif',
-      thumbnailImageSrc: 'assets/pics/career/10.jfif',
-    },
-    ,    {
-      itemImageSrc: 'assets/pics/career/11.jfif',
-      thumbnailImageSrc: 'assets/pics/career/11.jfif',
-    },
-  ],
+  videoUrl : 'assets/pics/demos/uir-shop-demo.mp4',
   technologies :  [
     'Angular',
     'Tailwind CSS'
   ]
-}
-
-
+  }
 
   jit : Project =  {
     title : 'Jit-Pilote',
@@ -220,81 +108,13 @@ career: Project = {
     link : 'https://jitpilote.jobintech.net/',
     client: 'JobInTech',
     date : '04-07-2024',
-    images : [
-      {
-        itemImageSrc: 'assets/pics/jit/1.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/1.jpg',
-      },
-      {
-        itemImageSrc: 'assets/pics/jit/2.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/2.jpg',
-      },
-      {
-        itemImageSrc: 'assets/pics/jit/3.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/3.jpg',
-      },
-      {
-        itemImageSrc: 'assets/pics/jit/4.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/4.jpg',
-      },
-      {
-        itemImageSrc: 'assets/pics/jit/5.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/5.jpg',
-      },
-      {
-        itemImageSrc: 'assets/pics/jit/6.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/6.jpg',
-      },
-      {
-        itemImageSrc: 'assets/pics/jit/7.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/7.jpg',
-      },    {
-        itemImageSrc: 'assets/pics/jit/8.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/8.jpg',
-      },    {
-        itemImageSrc: 'assets/pics/jit/9.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/9.jpg',
-      },
-      ,    {
-        itemImageSrc: 'assets/pics/jit/10.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/10.jpg',
-      },
-      ,    {
-        itemImageSrc: 'assets/pics/jit/11.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/11.jpg',
-      },
-      {
-        itemImageSrc: 'assets/pics/jit/12.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/12.jpg',
-      },
-      {
-        itemImageSrc: 'assets/pics/jit/13.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/13.jpg',
-      },    {
-        itemImageSrc: 'assets/pics/jit/14.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/14.jpg',
-      },    {
-        itemImageSrc: 'assets/pics/jit/15.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/15.jpg',
-      },
-      ,    {
-        itemImageSrc: 'assets/pics/jit/16.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/16.jpg',
-      },
-      {
-        itemImageSrc: 'assets/pics/jit/30.jpg',
-        thumbnailImageSrc: 'assets/pics/jit/30.jpg',
-      },
-    ],
+    videoUrl :'assets/pics/demos/jit-pilote-demo.mp4',
     technologies :  [
       'Spring Boot',
       'Angular',
       'Tailwind CSS'
     ]
   }
-
-
-
 
   learning : Project = {
     title : 'E-Learning',
@@ -307,68 +127,7 @@ career: Project = {
     link : 'https://github.com/dlimiyassin/Elearning',
     client: 'Graduation Project',
     date : '15-03-2022',
-    images : [
-      {
-        itemImageSrc: 'assets/pics/learning/1.png',
-        thumbnailImageSrc: 'assets/pics/learning/1.png',
-      },
-      {
-        itemImageSrc: 'assets/pics/learning/2.png',
-        thumbnailImageSrc: 'assets/pics/learning/2.png',
-      },
-      {
-        itemImageSrc: 'assets/pics/learning/3.png',
-        thumbnailImageSrc: 'assets/pics/learning/3.png',
-      },
-      {
-        itemImageSrc: 'assets/pics/learning/4.png',
-        thumbnailImageSrc: 'assets/pics/learning/4.png',
-      },
-      {
-        itemImageSrc: 'assets/pics/learning/5.jpeg',
-        thumbnailImageSrc: 'assets/pics/learning/5.jpeg',
-      },
-      {
-        itemImageSrc: 'assets/pics/learning/6.png',
-        thumbnailImageSrc: 'assets/pics/learning/6.png',
-      },
-      {
-        itemImageSrc: 'assets/pics/learning/7.png',
-        thumbnailImageSrc: 'assets/pics/learning/7.png',
-      },    {
-        itemImageSrc: 'assets/pics/learning/8.jpeg',
-        thumbnailImageSrc: 'assets/pics/learning/8.jpeg',
-      },    {
-        itemImageSrc: 'assets/pics/learning/9.jpg',
-        thumbnailImageSrc: 'assets/pics/learning/9.jpg',
-      },
-      ,    {
-        itemImageSrc: 'assets/pics/learning/10.jpg',
-        thumbnailImageSrc: 'assets/pics/learning/10.jpg',
-      },
-      ,    {
-        itemImageSrc: 'assets/pics/learning/11.jpg',
-        thumbnailImageSrc: 'assets/pics/learning/11.jpg',
-      },
-      {
-        itemImageSrc: 'assets/pics/learning/12.jpg',
-        thumbnailImageSrc: 'assets/pics/learning/12.jpg',
-      },
-      {
-        itemImageSrc: 'assets/pics/learning/13.jpg',
-        thumbnailImageSrc: 'assets/pics/learning/13.jpg',
-      },    {
-        itemImageSrc: 'assets/pics/learning/14.jpg',
-        thumbnailImageSrc: 'assets/pics/learning/14.jpg',
-      },    {
-        itemImageSrc: 'assets/pics/learning/15.jpg',
-        thumbnailImageSrc: 'assets/pics/learning/15.jpg',
-      },
-      ,    {
-        itemImageSrc: 'assets/pics/learning/16.jpg',
-        thumbnailImageSrc: 'assets/pics/learning/16.jpg',
-      },
-    ],
+    videoUrl : 'assets/pics/demos/e-learning-demo.mp4',
     technologies :  [
       'Spring Boot',
       'Angular',
@@ -376,80 +135,22 @@ career: Project = {
     ]
   }
 
-  showThumbnails: boolean | undefined;
-  fullscreen: boolean = false;
-  activeIndex: number = 0;
-  onFullScreenListener: any;
-
-  @ViewChild('galleria') galleria: Galleria | undefined;
-
-  responsiveOptions: any[] = [
-    {
-      breakpoint: '1024px',
-      numVisible: 5
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 3
-    },
-    {
-      breakpoint: '560px',
-      numVisible: 1
-    }
-  ];
-
-  onThumbnailButtonClick() {
-    this.showThumbnails = !this.showThumbnails;
-  }
-
-  toggleFullScreen() {
-    if (this.fullscreen) {
-      this.closePreviewFullScreen();
-    } else {
-      this.openPreviewFullScreen();
-    }
-
-    this.cd.detach();
-  }
-
-  openPreviewFullScreen() {
-    const elem = this.galleria?.element.nativeElement.querySelector('.p-galleria');
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    }
-  }
-
-  onFullScreenChange() {
-    this.fullscreen = !this.fullscreen;
-    this.cd.detectChanges();
-    this.cd.reattach();
-  }
-
-  closePreviewFullScreen() {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
-  }
-
-  bindDocumentListeners() {
-    this.onFullScreenListener = this.onFullScreenChange.bind(this);
-    document.addEventListener('fullscreenchange', this.onFullScreenListener);
-  }
-
-  unbindDocumentListeners() {
-    document.removeEventListener('fullscreenchange', this.onFullScreenListener);
-    this.onFullScreenListener = null;
+  atlas : Project = {
+    title : 'Atlas Service',
+    description: `Fulfillment CRM for manage managing arrivals importation and orders from confirmation to delivery.`,
+    link : '-',
+    client: 'Atlas service',
+    date : '15-03-2025',
+    videoUrl : 'assets/pics/demos/atlas-service-demo.mp4',
+    technologies :  [
+      'Spring Boot',
+      'Angular',
+      'MongoDB',
+      'Taildwind'
+    ]
   }
 
 
-
-  galleriaClass() {
-    return `custom-galleria ${this.fullscreen ? 'fullscreen' : ''}`;
-  }
-
-  fullScreenIcon() {
-    return `pi ${this.fullscreen ? 'pi-window-minimize' : 'pi-window-maximize'}`;
-  }
 }
 
 
@@ -459,15 +160,15 @@ export class Project {
   link : string;
   client : string;
   date : string;
-  images : any[] | undefined;
+  videoUrl : string | SafeResourceUrl | null ;
   technologies : string[]
-  constructor(title : string, desc : string, link:string, date:string, client:string, images : any[] | undefined, techs : string[]){
+  constructor(title : string, desc : string, link:string, date:string, client:string, videoUrl : string, techs : string[]){
     this.title=title;
     this.description=desc;
     this.link=link;
     this.client=client;
     this.date=date;
-    this.images=images;
+    this.videoUrl=videoUrl as SafeResourceUrl | null;
     this.technologies=techs;
   }
 

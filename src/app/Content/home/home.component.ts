@@ -39,18 +39,30 @@ export class HomeComponent {
     } 
   }
 
+    redirectToProject(name: string | undefined) {
+    if (name) {
+      this.router.navigateByUrl(`project/${name}`);
+    }
+  }
+
+  
+  hoveredIndex: number | null = null;
+
   projects : Project[] = [
     {
+    name : 'Atlas-Service',
     title : "Atlas Service",
     description: "Fulfillment CRM that will help you manage your arrivals and leads and take your business to next level.",
     img: "assets/pics/logos/atlas-logo.png"
     },
     {
+    name : 'Uir-Shop',
     title : "UIR Shop",
     description: "E-Commerce Platform that will help you manage your Orders and leads and take your business to next level.",
     img: "assets/pics/logos/uir-logo.png"
     },
     {
+    name : 'Jit-Pilote',
     title : "JIT Pilote",
     description: "Project management tool that will help you manage your projects using Agile framewokrs.",
     img: "assets/pics/logos/jit-logo.png"
@@ -58,14 +70,15 @@ export class HomeComponent {
 ]
 }
 
-
 class Project {
+  name: string;
   title : string;
   description : string;
   img: string;
 
 
-  constructor(title :string, desc : string, img: string) {
+  constructor(name: string, title :string, desc : string, img: string) {
+    this.name= name
     this.title = title
     this.description = desc
     this.img = img
