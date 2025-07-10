@@ -16,9 +16,21 @@ export class HomeComponent {
   ngOnInit(): void {
     this.adjustPageSize();
     this.scrollToTop();
-    setTimeout(() => {
+
+
+    if (document.readyState === 'complete') {
+      console.log("kayn");
+          setTimeout(() => {
       this.animateSections = true;
-    }, 100); // delay to allow initial render
+    }, 100);
+    } else {
+    window.addEventListener('load', () => {
+    console.log(true);
+        setTimeout(() => {
+      this.animateSections = true;
+    }, 100);
+    });
+}
   }
 
   scrollToTop(): void {
