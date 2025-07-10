@@ -1,5 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
+import { LoadingService } from '../../services/loading.service';
 
 
 @Component({
@@ -12,15 +14,21 @@ export class HomeComponent {
   animateSections = false;
   pageLoaded : boolean = false;
 
-  constructor(private router : Router){}
+  constructor(private router : Router, private messageService: MessageService, private loadService: LoadingService){}
 
   ngOnInit(): void {
     this.adjustPageSize();
     this.scrollToTop();
+
     this.pageLoaded = true
       setTimeout(() => {
       this.animateSections = true;
     }, 200);
+
+    if(this.loadService.getreminder()){
+      this.showMessage()
+      this.loadService.setReminder(false)
+    }
   }
 
 
@@ -32,10 +40,18 @@ export class HomeComponent {
       this.animateSections = true;
     }, 200);
     });
+
+    console.log(
+    "%c Hand-coded with ❤️ by Yassine Dlimi\n%cBuilt with Angular + Tailwind. No templates used.",
+    "color: #2EC7E2; font-size: 16px; font-weight: bold;",
+    "color: black; font-size: 12px;"
+    );
   }
 
-  enableAnimation(){
-    
+
+  showMessage() {
+     this.messageService.add({ severity: 'secondary', summary: 'Clarification', detail: 'This portfolio is 100% Hand-coded', key: 'br' });
+     this.messageService.add({ severity: 'secondary', summary: 'Clarification', detail: 'No templates used', key: 'br' });
   }
 
   scrollToTop(): void {

@@ -17,6 +17,8 @@ import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { GalleriaModule } from 'primeng/galleria';
 import { ProjectViewComponent } from './Content/project-view/project-view.component';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,10 +40,11 @@ import { ProjectViewComponent } from './Content/project-view/project-view.compon
     TagModule,
     ButtonModule,
     CarouselModule,
-    GalleriaModule
+    GalleriaModule,
+    ToastModule
   ],
   providers: [
-    provideClientHydration()
+   MessageService
   ],
   bootstrap: [AppComponent]
 })
