@@ -33,7 +33,7 @@ export class HomeComponent {
 
 
     ngAfterViewInit(): void {
-    // Wait for full window load (all assets loaded)
+    // wait for full window load (all assets loaded)
     window.addEventListener('load', () => {
       this.pageLoaded = true
       setTimeout(() => {
