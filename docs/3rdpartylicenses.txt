@@ -248,12 +248,12 @@ License: "MIT"
 
 
 --------------------------------------------------------------------------------
-Package: @angular/router
+Package: primeng
 License: "MIT"
 
 
 --------------------------------------------------------------------------------
-Package: primeng
+Package: @angular/router
 License: "MIT"
 
 
