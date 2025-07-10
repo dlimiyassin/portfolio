@@ -138,7 +138,7 @@ snycProject(projectName: string | null) {
   atlas : Project = {
     title : 'Atlas Service',
     description: `Fulfillment CRM for manage managing arrivals importation and orders from confirmation to delivery.`,
-    link : '-',
+    link : 'https://asglobalsourcing.com/',
     client: 'Atlas service',
     date : '15-03-2025',
     videoUrl : 'assets/pics/demos/atlas-service-demo.mp4',

@@ -35,3 +35,19 @@
     opacity: 65%;
     z-index: 0; /* Behind the text */
 }
+
+
+
+.dots-pattern-profile {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background-image: radial-gradient(circle, #000000 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 65%;
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  /* No border-top-right-radius → sharp corner */
+  z-index: 10;
+}

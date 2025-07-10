@@ -122,6 +122,24 @@
                 }
             }
 
+            @if (devops) {
+                <p class="text-base font-spartan mt-8">DevOps</p>
+                @for (skill of devops; track $index) {
+                    <div #progressBars class="mb-3">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium text-white">{{skill.title}}</span>
+                            <span class="text-xs font-medium text-gray-300">{{skill.progress}}%</span>
+                          </div>
+                          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                            <div class="bg-[#F5DC50] h-2.5 rounded-full" 
+                                [ngStyle]="{ '--progress-width': skill.progress + '%' }"
+                                [ngClass]="{ 'animate-progress': animate }">
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
 
             @if (database) {
                 <p class="text-base font-spartan mt-8">Database</p>
@@ -132,7 +150,7 @@
                             <span class="text-xs font-medium text-gray-300">{{skill.progress}}%</span>
                           </div>
                           <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                            <div class="bg-[#96E9C6] h-2.5 rounded-full" 
+                            <div class="bg-[#2D969B] h-2.5 rounded-full" 
                                 [ngStyle]="{ '--progress-width': skill.progress + '%' }"
                                 [ngClass]="{ 'animate-progress': animate }">
                             </div>
@@ -150,7 +168,7 @@
                             <span class="text-xs font-medium text-gray-300">{{skill.progress}}%</span>
                           </div>
                           <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                            <div class="bg-[#FFFD8C] h-2.5 rounded-full" 
+                            <div class="bg-[#F06937] h-2.5 rounded-full" 
                                 [ngStyle]="{ '--progress-width': skill.progress + '%' }"
                                 [ngClass]="{ 'animate-progress': animate }">
                             </div>
@@ -158,6 +176,7 @@
                     </div>
                 }
             }
+
         </div>
     </div>
 </div>

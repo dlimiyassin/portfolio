@@ -4,7 +4,7 @@
 
 .dots-pattern {
     position: absolute; /* Ensure the dots are positioned absolutely within the relative container */
-    bottom: 25px; /* Ajuster pour que ce soit sous le texte */
+    bottom: -5px; /* Ajuster pour que ce soit sous le texte */
     right: -30px; /* Adjust alignment to the right */
     width: 48px; /* 8 dots * 6px size */
     height: 24px; /* 4 dots * 6px size */

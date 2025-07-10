@@ -98,7 +98,7 @@ export class ResumeComponent {
       progress : 50
     },
     {
-      title: "UML",
+      title: "MongoDB",
       progress : 60
     },
     {
@@ -122,6 +122,22 @@ export class ResumeComponent {
     },
     {
       title: "French",
+      progress : 70
+    },
+
+  ]
+
+    devops: Skill[]=[
+    {
+      title: "Git",
+      progress : 90
+    },
+    {
+      title: "Docker",
+      progress : 80
+    },
+    {
+      title: "Linux Scripting",
       progress : 70
     },
 
