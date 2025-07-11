@@ -48,10 +48,10 @@ export class ResumeComponent {
 
   experiances : Experiance[] = [
     {
-      post : "Freelance Java Angular",
-      starting_date : "Present",
+      post : "Fullstack Java Angular",
+      starting_date : "Mars, 2025",
       ending_date: "Oct, 2024",
-      comapny : "UpWork",
+      comapny : "Atlas Service",
       description: "Developing and debugging backend APIs and Angular applications, resolving customer-reported issues, and actively participating in customer meetings to discuss progress and address concerns."
     },
     {

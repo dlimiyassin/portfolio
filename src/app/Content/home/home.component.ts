@@ -29,7 +29,7 @@ export class HomeComponent {
       setTimeout(() => {
         this.showMessage()
         this.loadService.setReminder(false)
-      },10000)
+      },8000)
     }
   }
 
@@ -51,10 +51,22 @@ export class HomeComponent {
   }
 
 
-  showMessage() {
-     this.messageService.add({ severity: 'secondary', summary: 'Clarification', detail: 'This portfolio is 100% Hand-coded', key: 'br' });
-     this.messageService.add({ severity: 'secondary', summary: 'Clarification', detail: 'No templates used', key: 'br' });
-  }
+showMessage() {
+  this.messageService.add({
+    severity: 'info',
+    summary: 'Note',
+    detail: 'This portfolio is 100% Hand-coded',
+    key: 'br',
+  });
+
+  this.messageService.add({
+    severity: 'info',
+    summary: 'Note',
+    detail: 'No templates used',
+    key: 'br',
+  });
+}
+
 
   scrollToTop(): void {
     if (typeof window !== 'undefined') {
