@@ -23,20 +23,20 @@ main {
 }
 @font-face {
     font-family: 'Montserrat';
-    src: url('/portfolio/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+    src: url('assets/fonts/Montserrat-Regular.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'Montserrat-semibold';
-    src: url('/portfolio/assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+    src: url('assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'FreightDispProBlack-Regular';
-    src: url('/portfolio/assets/fonts/FreightDispProBlack-Regular.ttf') format('truetype');
+    src: url('assets/fonts/FreightDispProBlack-Regular.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }

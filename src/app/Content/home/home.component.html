@@ -1,7 +1,7 @@
 <div *ngIf="pageLoaded" class="flex flex-col space-y-4 p-0 box-border overflow-hidden">
   <!-- Pick up line -->
   <div
-    class="2xl:text-7xl xl:text-6xl text-4xl font-extrabold transform transition duration-700 ease-out"
+    class="2xl:text-7xl xl:text-6xl text-4xl transform font-sans font-extrabold transition duration-700 ease-out"
     [class.translate-x-[-100%]]="!animateSections"
     [class.opacity-0]="!animateSections"
     [style.transitionDelay]="'100ms'"
@@ -64,7 +64,7 @@
         </div>
     
         <div class="p-0 my-3">
-          <h2 class="text-lg text-gray-300 font-bold">{{project.title}}</h2>
+          <h2 class="text-lg text-gray-300 font-sans font-bold">{{project.title}}</h2>
           <p class="text-sm md:text-[7px] lg:text-sm text-gray-300 opacity-70 mt-1">
            {{project.description}}
           </p>
