@@ -17,26 +17,26 @@ main {
 
 @font-face {
     font-family: 'League Spartan';
-    src: url('/assets/fonts/LeagueSpartan-Bold.otf') format('opentype');
+    src: url('assets/fonts/LeagueSpartan-Bold.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
     font-family: 'Montserrat';
-    src: url('/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+    src: url('assets/fonts/Montserrat-Regular.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
     font-family: 'Montserrat-semibold';
-    src: url('/assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+    src: url('assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'FreightDispProBlack-Regular';
-    src: url('/assets/fonts/FreightDispProBlack-Regular.ttf') format('truetype');
+    src: url('assets/fonts/FreightDispProBlack-Regular.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }

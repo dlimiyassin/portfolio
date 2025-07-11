@@ -26,8 +26,10 @@ export class HomeComponent {
     }, 200);
 
     if(this.loadService.getreminder()){
-      this.showMessage()
-      this.loadService.setReminder(false)
+      setTimeout(() => {
+        this.showMessage()
+        this.loadService.setReminder(false)
+      },10000)
     }
   }
 
