@@ -98,7 +98,8 @@ snycProject(projectName: string | null) {
   videoUrl : 'assets/pics/demos/career-demo.mp4',
   technologies :  [
     'Angular',
-    'Tailwind CSS'
+    'Bootstrap',
+    'Json Server'
   ]
   }
 
