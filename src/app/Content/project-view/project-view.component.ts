@@ -71,7 +71,7 @@ snycProject(projectName: string | null) {
   link : 'https://github.com/dlimiyassin/oncf',
   client: 'Training Edge Consulting',
   date : '30-10-2023',
-  videoUrl : 'assets/pics/demos/uir-shop-demo.mp4',
+  videoUrl : 'assets/pics/demos/oncf-demo.mp4',
   technologies :  [
     "Spring Boot",
     "Spring Security & JWT",
@@ -95,7 +95,7 @@ snycProject(projectName: string | null) {
   link : 'https://github.com/dlimiyassin/CareerHub',
   client: 'Learning purpose',
   date : '11-05-2024',
-  videoUrl : 'assets/pics/demos/uir-shop-demo.mp4',
+  videoUrl : 'assets/pics/demos/career-demo.mp4',
   technologies :  [
     'Angular',
     'Tailwind CSS'
