@@ -1,25 +1,25 @@
-<div *ngIf="pageLoaded" class="flex flex-col space-y-4 p-0 box-border overflow-hidden">
-
-<div class="flex lg:hidden items-center scale-75 justify-center transform transition duration-700 ease-out">
+<!-- profile pic -->
+<div class="flex lg:hidden mb-6 items-center justify-center transform transition duration-700 ease-out">
   <div class="relative py-0 w-fit">
     <!-- Top-right dots -->
-    <div class="top-dots-pattern top-[5px] left-[140px]"></div>
+    <div class="top-dots-pattern top-[3px] left-[110px]"></div>
   
     <!-- Bottom-left dots -->
-    <div class="bottom-dots-pattern bottom-[5px] right-[140px]"></div>
+    <div class="bottom-dots-pattern bottom-[3px] right-[110px]"></div>
   
     <img
-      class="rounded-tl-[100px] rounded-br-[100px] w-48 h-48 hover:scale-110 transition-transform ease-in-out"
+      class="rounded-tl-[100px] rounded-br-[100px] w-40 h-36 hover:scale-110 transition-transform ease-in-out"
       src="assets/pics/profile/2.jpg"
       alt="profile"
     />
   </div>
 </div>
+<div *ngIf="pageLoaded" class="flex flex-col space-y-4 p-0 box-border overflow-hidden">
+
 
 
   <!-- Pick up line -->
-  <div
-    class="2xl:text-7xl xl:text-6xl md:text-4xl text-2xl transform font-sans font-extrabold transition duration-700 ease-out"
+  <div class="2xl:text-7xl xl:text-6xl md:text-4xl text-2xl transform font-sans font-extrabold transition duration-700 ease-out"
     [class.translate-x-[-100%]]="!animateSections"
     [class.opacity-0]="!animateSections"
     [style.transitionDelay]="'100ms'"
@@ -29,9 +29,8 @@
   </div>
 
   <!-- What I do -->
-  <div
+  <div class="text-lg  opacity-75 pt-0 md:pt-2 xl:pt-4 2xl:pt-8 transform transition duration-700 ease-out hover:cursor-pointer"
     routerLink="/about"
-    class="text-lg pt-4 opacity-75 transform transition duration-700 ease-out hover:cursor-pointer"
     [class.translate-x-[100%]]="!animateSections"
     [class.opacity-0]="!animateSections"
     [style.transitionDelay]="'400ms'"
@@ -42,8 +41,7 @@
   </div>
 
   <!-- projects -->
-  <div 
-    class="flex flex-row pt-8 space-x-5 md:space-x-10 transform transition duration-700 ease-out"
+  <div class="flex flex-row space-x-5 md:space-x-10  pt-4 md:pt-8 xl:pt-14 2xl:pt-16 transform transition duration-700 ease-out"
     [class.translate-y-[100%]]="!animateSections"
     [class.opacity-0]="!animateSections"
     [style.transitionDelay]="'1000ms'"
@@ -82,7 +80,7 @@
         </div>
     
         <div class="p-0 my-3">
-          <h2 class="text-sm md:text-lg text-gray-300 font-sans font-bold">{{project.title}}</h2>
+          <h2 class="text-xs md:text-lg text-gray-300 font-sans font-bold">{{project.title}}</h2>
           <p class="hidden lg:inline-block text-sm md:text-[7px] lg:text-sm text-gray-300 opacity-70 mt-1">
            {{project.description}}
           </p>
