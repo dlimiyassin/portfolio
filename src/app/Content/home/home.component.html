@@ -1,7 +1,25 @@
 <div *ngIf="pageLoaded" class="flex flex-col space-y-4 p-0 box-border overflow-hidden">
+
+<div class="flex lg:hidden items-center scale-75 justify-center transform transition duration-700 ease-out">
+  <div class="relative py-0 w-fit">
+    <!-- Top-right dots -->
+    <div class="top-dots-pattern top-[5px] left-[140px]"></div>
+  
+    <!-- Bottom-left dots -->
+    <div class="bottom-dots-pattern bottom-[5px] right-[140px]"></div>
+  
+    <img
+      class="rounded-tl-[100px] rounded-br-[100px] w-48 h-48 hover:scale-110 transition-transform ease-in-out"
+      src="assets/pics/profile/2.jpg"
+      alt="profile"
+    />
+  </div>
+</div>
+
+
   <!-- Pick up line -->
   <div
-    class="2xl:text-7xl xl:text-6xl text-4xl transform font-sans font-extrabold transition duration-700 ease-out"
+    class="2xl:text-7xl xl:text-6xl md:text-4xl text-2xl transform font-sans font-extrabold transition duration-700 ease-out"
     [class.translate-x-[-100%]]="!animateSections"
     [class.opacity-0]="!animateSections"
     [style.transitionDelay]="'100ms'"
@@ -25,13 +43,13 @@
 
   <!-- projects -->
   <div 
-    class="flex flex-row pt-8 space-x-10 transform transition duration-700 ease-out"
+    class="flex flex-row pt-8 space-x-5 md:space-x-10 transform transition duration-700 ease-out"
     [class.translate-y-[100%]]="!animateSections"
     [class.opacity-0]="!animateSections"
     [style.transitionDelay]="'1000ms'"
   >
     @for (project of projects; track $index) {
-    <div (click)="redirectToProject(project.name)" class="w-52 bg-black text-white rounded-2xl overflow-hidden relative m-0 p-0 
+    <div (click)="redirectToProject(project.name)" class="w-[30%] md:w-52 bg-black text-white rounded-2xl overflow-hidden relative m-0 p-0 
          transform transition-transform duration-300 hover:scale-105"
          (mouseenter)="hoveredIndex = $index"
          (mouseleave)="hoveredIndex = null">
@@ -44,37 +62,50 @@
             <img 
               src="assets/pics/css.png" 
               alt="Decoration" 
-              class="absolute bottom-0 right-0 w-20 h-20 pointer-events-none m-0 p-0"
+              class="absolute bottom-0 right-0 w-10 h-10 md:w-20 md:h-20 pointer-events-none m-0 p-0"
             />
             <button
-              class="absolute bottom-2 right-2 w-8 h-8 rounded-full flex items-center justify-center bg-black text-white border border-white
+              class="absolute right-1 bottom-1 md:bottom-2 md:right-2 w-4 h-4 md:w-8 md:h-8 rounded-full flex items-center justify-center bg-black text-white border border-white
                      transition hover:bg-white hover:text-black hover:border-black overflow-hidden"
             >
               <i
                 *ngIf="hoveredIndex !== $index"
-                class="pi pi-arrow-right text-sm absolute transition-opacity duration-300 ease-in-out opacity-100"
+                class="pi pi-arrow-right text-xs md:text-sm absolute transition-opacity duration-300 ease-in-out opacity-100"
                 style="transform-origin: center;"
               ></i>
               <i
                 *ngIf="hoveredIndex === $index"
-                class="pi pi-arrow-up-right text-sm absolute transition-opacity duration-300 ease-in-out opacity-100"
+                class="pi pi-arrow-up-right text-xs md:text-sm absolute transition-opacity duration-300 ease-in-out opacity-100"
                 style="transform-origin: center;"
               ></i>
             </button>
         </div>
     
         <div class="p-0 my-3">
-          <h2 class="text-lg text-gray-300 font-sans font-bold">{{project.title}}</h2>
-          <p class="text-sm md:text-[7px] lg:text-sm text-gray-300 opacity-70 mt-1">
+          <h2 class="text-sm md:text-lg text-gray-300 font-sans font-bold">{{project.title}}</h2>
+          <p class="hidden lg:inline-block text-sm md:text-[7px] lg:text-sm text-gray-300 opacity-70 mt-1">
            {{project.description}}
           </p>
         </div>
 
     </div>
     }
-    <div routerLink="/projects" class="flex flex-row  w-40 h-40 justify-items-center items-center justify-center">
+    <div routerLink="/projects" class="hidden lg:flex flex-row  w-40 h-40 justify-items-center items-center justify-center">
         <i class="p-3 xl:p-6 pi pi-arrow-right text-2xl bg-black text-white rounded-full border border-white hover:bg-white hover:text-black hover:border-black hover:cursor-pointer"></i>
     </div>
   </div>
+
+  <!-- view more -->
+  <div class="flex lg:hidden items-center justify-center transform transition duration-700 ease-out"
+   [class.translate-y-[100%]]="!animateSections"
+    [class.opacity-0]="!animateSections"
+    [style.transitionDelay]="'1400ms'"
+  >
+    <div routerLink="/projects" class="w-40 h-40  text-center">
+      <i class="p-3 pi pi-arrow-right text-2xl bg-black text-white rounded-full border border-white hover:bg-white hover:text-black hover:border-black hover:cursor-pointer"></i>
+    </div>
+  </div>
+
+
 
 </div>

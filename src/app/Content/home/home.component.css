@@ -7,3 +7,30 @@ i.ng-animating {
   transform: scale(0.9);
 }
 
+.top-dots-pattern {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-image: radial-gradient(circle, #000000 1px, transparent 2px);
+  background-size: 8px 8px;
+  opacity: 65%;
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  /* No border-top-right-radius → sharp corner */
+  z-index: 10;
+}
+
+.bottom-dots-pattern {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-image: radial-gradient(circle, #ffffff 1px, transparent 2px);
+  background-size: 8px 8px;
+  opacity: 65%;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  /* No border-top-right-radius → sharp corner */
+  z-index: 10;
+}

@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-  constructor() { }
+  constructor() { 
+
+
+  }
 
   ngOnInit(): void {
     this.scrollToTop();

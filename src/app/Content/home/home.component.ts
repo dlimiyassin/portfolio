@@ -17,7 +17,7 @@ export class HomeComponent {
   constructor(private router : Router, private messageService: MessageService, private loadService: LoadingService){}
 
   ngOnInit(): void {
-    this.adjustPageSize();
+    //this.adjustPageSize();
     this.scrollToTop();
 
     this.pageLoaded = true
@@ -53,29 +53,27 @@ export class HomeComponent {
 
 showMessage() {
   this.messageService.add({
-    severity: 'info',
+    severity: 'secondary',
     summary: 'Note',
-    detail: 'This portfolio is 100% Hand-coded',
-    key: 'br',
+    detail: 'This portfolio is 100% Hand-coded, No templates used',
+    key: 'bc',
+    styleClass: 'fixed text-black md:w-[100%] w-[80%] right-[10%] bottom-8 max-w-md'
   });
 
-  this.messageService.add({
-    severity: 'info',
-    summary: 'Note',
-    detail: 'No templates used',
-    key: 'br',
-  });
 }
 
 
+
   scrollToTop(): void {
-    if (typeof window !== 'undefined') {
+    
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+      console.log("cc")
+    
   }
+
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
-    this.adjustPageSize();
+    //this.adjustPageSize();
   }
   screenWidth!: number;
 
