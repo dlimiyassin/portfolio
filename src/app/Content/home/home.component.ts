@@ -17,7 +17,7 @@ export class HomeComponent {
   constructor(private router : Router, private messageService: MessageService, private loadService: LoadingService){}
 
   ngOnInit(): void {
-    //this.adjustPageSize();
+    // // this.adjustPageSize();
     this.scrollToTop();
 
     this.pageLoaded = true
